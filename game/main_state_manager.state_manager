@@ -1,0 +1,17 @@
+
+
+from kernel import StateManager, ColorSys, Data
+
+
+class MainStateManager(StateManager):
+
+
+	def init(self):
+
+		self.color_sys = ColorSys()
+
+	def cleanup(self):
+		pass
+
+
+Data.exported = MainStateManager

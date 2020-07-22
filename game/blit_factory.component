@@ -1,0 +1,33 @@
+"""
+	REQ blit.game_object
+"""
+
+
+from kernel import Component, Data
+
+
+class BlitFactory(Component):
+
+
+	def __init__(self, damage, cost, travel_cost, ttl):
+
+		super().__init__()
+
+		self.damage = damage
+		self.cost = cost
+		self.travel_cost = travel_cost
+		self.ttl = ttl
+
+	def new_blit(self, position, direction):
+		return Data.game_objects["blit"](
+			state_manager=self.state_manager,
+			owner=self.game_object,
+			position=position,
+			damage=self.damage,
+			direction=direction,
+			ttl=self.ttl,
+			travel_cost=self.travel_cost,
+		)
+
+
+Data.exported = BlitFactory

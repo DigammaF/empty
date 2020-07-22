@@ -1,0 +1,12 @@
+
+
+from kernel import Component
+
+
+class Bloc(Component):
+
+
+	walkable = False
+
+
+Data.exported = Bloc

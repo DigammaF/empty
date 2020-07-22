@@ -1,0 +1,27 @@
+"""
+	REQ bloc.component, sprite.component
+"""
+
+
+from kernel import ColorSys, Data, GameObject
+
+
+def new_block(state_manager, position, components=None):
+
+	if components is None:
+		components = {}
+
+	return GameObject(
+		name="bloc",
+		state_manager=state_manager,
+		position=position,
+		components={
+			"bloc": Data.components["bloc"](),
+			"sprite": Data.components["sprite"]("#", ColorSys.YELLOW),
+			**components,
+		},
+		static=True,
+	)
+
+
+Data.exported = new_block

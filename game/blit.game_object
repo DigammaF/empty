@@ -1,0 +1,31 @@
+"""
+	REQ mono_engine.component, sprite.component, aprefill.component, legs.component
+"""
+
+
+from kernel import GameObject, Data, ColorSys
+
+
+def new_blit(state_manager, owner, position, direction, damage, ttl, travel_cost,
+			 components=None):
+
+	if components is None:
+		components = {}
+
+	return GameObject(
+		name="blit",
+		state_manager=state_manager,
+		position=position,
+		components={
+			"mono_engine": Data.components["mono_engine"](
+				direction=direction, owner=owner, damage=damage, ttl=ttl
+			),
+			"sprite": Data.components["sprite"]("o", ColorSys.RED),
+			"aprefill": Data.components["aprefill"](1),
+			GameObject.LEGS: Data.components["legs"](travel_cost),
+			**components,
+		}
+	)
+
+
+Data.exported = new_blit

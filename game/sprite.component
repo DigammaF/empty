@@ -1,0 +1,30 @@
+
+
+from kernel import ColorSys, Component, Data
+
+
+class Sprite(Component):
+
+
+	drawn = True
+
+
+	def __init__(self, char, fg, bg=ColorSys.BLACK):
+
+		super().__init__()
+
+		self.fg = fg
+		self.bg = bg
+		self.char = char
+
+	def draw(self, window, reference):
+
+		p = self.get_relative_position(reference)
+
+		window.addstr(p.y, p.x, self.char, self.state_manager.color_sys.get_color(
+			self.fg,
+			self.bg,
+		))
+
+
+Data.exported = Sprite

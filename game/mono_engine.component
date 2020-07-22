@@ -1,0 +1,46 @@
+
+
+from kernel import Component, Data
+
+
+class MonoEngine(Component):
+
+
+	updated = True
+
+
+	def __init__(self, direction, owner, damage, ttl):
+
+		super().__init__()
+
+		self.direction = direction
+		self.owner = owner
+		self.damage = damage
+		self.ttl = ttl
+
+	def update(self, dt):
+
+		self.ttl -= dt
+
+		if self.ttl < 0:
+			self.defer_vanish()
+			return
+
+		self.game_object.velocity.set(self.direction)
+
+	def collision(self, game_obj):
+
+		if game_obj.name == "pawn":
+			game_obj.damage(self.damage, self.owner)
+
+		self.defer_vanish()
+
+	def collision_enter(self, game_obj):
+
+		self.defer_vanish()
+
+	def defer_vanish(self):
+		self.game_object.state_manager.defer(lambda self=self: self.game_object.vanish())
+
+
+Data.exported = MonoEngine

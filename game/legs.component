@@ -1,0 +1,16 @@
+
+
+from kernel import Component
+
+
+class Legs(Component):
+
+
+	def __init__(self, base_walk_cost):
+
+		super().__init__()
+
+		self.base_walk_cost = base_walk_cost
+
+
+Data.exported = Legs

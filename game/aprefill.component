@@ -1,0 +1,23 @@
+
+
+from kernel import Component
+
+
+class APRefill(Component):
+
+
+	updated = True
+
+
+	def __init__(self, f: int or float=1.0):
+
+		super().__init__()
+
+		self.f = f
+
+	def update(self, dt):
+
+		self.game_object.ap = max(0, self.game_object.ap - dt*self.f)
+
+
+Data.exported = APRefill

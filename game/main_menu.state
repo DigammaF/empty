@@ -1,0 +1,95 @@
+"""
+	REQ main_game.state
+"""
+
+
+import curses
+
+from kernel import State, Data, ColorSys
+
+
+class MainMenu(State):
+
+
+	def init(self):
+
+		self.resume()
+
+	def cleanup(self):
+		pass
+
+	def handle_events(self):
+
+		try:
+
+			char = self.window.getkey()
+
+		except curses.error: # no key pressed
+			return
+
+		print(f": ({ord(char)}) {char}")
+
+		if char == "q":
+			self.state_manager.quit()
+
+		if char == "n":
+			self.state_manager.push_state(self.window, Data.states["main_game"])
+
+	def update(self, dt):
+		pass
+
+	def draw(self):
+		pass
+
+	def pause(self):
+		pass
+
+	def resume(self):
+
+		curses.curs_set(False)
+		self.window.nodelay(True)
+
+		self.window.bkgd(" ", self.state_manager.color_sys.get_color(
+			ColorSys.WHITE,
+			ColorSys.BLACK,
+		))
+
+		self.window.attrset(self.state_manager.color_sys.get_color(
+			ColorSys.WHITE,
+			ColorSys.BLACK,
+		))
+
+		my, mx = self.window.getmaxyx()
+
+		self.window.border()
+		self.window.addstr(int(my * 0.3), int(mx * 0.3), "Empty", curses.A_BOLD)
+
+		y, x = int(my * 0.3) + 2, int(mx * 0.32)
+
+		self.window.addstr(y + 2, x, "Nouveau")
+		self.window.addstr(y + 2, x, "N", curses.A_BOLD | curses.A_UNDERLINE)
+
+		self.window.addstr(y + 3, x, "Charger")
+		self.window.addstr(y + 3, x, "C", curses.A_BOLD | curses.A_UNDERLINE)
+
+		self.window.addstr(y + 5, x, "Options")
+		self.window.addstr(y + 5, x, "O", curses.A_BOLD | curses.A_UNDERLINE)
+
+		self.window.addstr(y + 6, x, "Aide")
+		self.window.addstr(y + 6, x, "A", curses.A_BOLD | curses.A_UNDERLINE)
+
+		self.window.addstr(y + 8, x, "Crédits")
+		self.window.addstr(y + 8, x + 1, "r", curses.A_BOLD | curses.A_UNDERLINE)
+
+		self.window.addstr(y + 9, x, "Quitter")
+		self.window.addstr(y + 9, x, "Q", curses.A_BOLD | curses.A_UNDERLINE)
+
+		self.window.addstr(my - 1, int(mx*0.85), "v0.1")
+
+		self.window.refresh()
+
+	def endframe(self):
+		pass
+
+
+Data.exported = MainMenu

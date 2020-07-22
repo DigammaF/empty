@@ -1,0 +1,120 @@
+"""
+	REQ debug.space
+"""
+
+
+import curses
+
+from kernel import State, V, ColorSys, Data
+
+
+class MainGame(State):
+
+
+	def init(self):
+
+		self.space = Data.spaces["debug"](self.state_manager)
+		self.dt_hist = []
+		self.dt_hist_size = 300
+
+		self.resume()
+
+	def cleanup(self):
+		pass
+
+	def handle_events(self):
+
+		try:
+
+			char = self.window.getkey()
+
+		except curses.error: # no key pressed
+			return
+
+		if char == "\n":
+			my, mx = self.window.getmaxyx()
+			return
+
+		if char == "k":
+			self.state_manager.quit()
+			return
+
+		if char == "z":
+			self.space.get_obj("player").velocity.set(V(0, 1))
+			return
+
+		if char == "s":
+			self.space.get_obj("player").velocity.set(V(0, -1))
+			return
+
+		if char == "q":
+			self.space.get_obj("player").velocity.set(V(1, 0))
+			return
+
+		if char == "d":
+			self.space.get_obj("player").velocity.set(V(-1, 0))
+			return
+
+		if char == "8":
+			self.space.get_obj("player").blit_com.set(V(0, 1))
+			return
+
+		if char == "2":
+			self.space.get_obj("player").blit_com.set(V(0, -1))
+			return
+
+		if char == "4":
+			self.space.get_obj("player").blit_com.set(V(1, 0))
+			return
+
+		if char == "6":
+			self.space.get_obj("player").blit_com.set(V(-1, 0))
+			return
+
+	def update(self, dt):
+
+		self.space.update(dt)
+
+		self.dt_hist.append(dt)
+
+		while len(self.dt_hist) >= self.dt_hist_size:
+			del self.dt_hist[0]
+
+	def draw(self):
+
+		my, mx = self.window.getmaxyx()
+
+		self.space.focus_on(self.space.get_obj("player").position, mx, my)
+
+		self.window.clear()
+		self.space.draw(self.window)
+
+		a = (sum(self.dt_hist)/len(self.dt_hist))
+		self.window.addstr(0, 0, str(5*(int(1/a)//5) if a != 0 else "x"))
+
+	def pause(self):
+		pass
+
+	def resume(self):
+
+		curses.curs_set(False)
+		self.window.nodelay(True)
+
+		self.window.clear()
+
+		self.window.bkgd(" ", self.state_manager.color_sys.get_color(
+			ColorSys.WHITE,
+			ColorSys.BLACK,
+		))
+
+		self.window.attrset(self.state_manager.color_sys.get_color(
+			ColorSys.WHITE,
+			ColorSys.BLACK,
+		))
+
+	def endframe(self):
+
+		self.window.refresh()
+
+
+Data.exported = MainGame

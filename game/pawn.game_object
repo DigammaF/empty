@@ -1,0 +1,34 @@
+"""
+	REQ aprefill.component, sprite.component, text_display.component, legs.component
+"""
+
+
+from kernel import GameObject, Data
+
+
+def new_pawn(state_manager, position, char, color, blit_factory_component=None, components=None):
+
+	if components is None:
+		components = {}
+
+	obj_components = {
+		"aprefill": Data.components["aprefill"](1),
+		"sprite": Data.components["sprite"](char, color),
+		"name_display": Data.components["text_display"](-1),
+		"dialog_display": Data.components["text_display"](1),
+		GameObject.LEGS: Data.components["legs"](0.1),
+		**components,
+	}
+
+	if blit_factory_component is not None:
+		obj_components[GameObject.BLIT_FACTORY] = blit_factory_component
+
+	return GameObject(
+		name="pawn",
+		state_manager=state_manager,
+		position=position,
+		components=obj_components,
+	)
+
+
+Data.exported = new_pawn

@@ -1,0 +1,64 @@
+
+
+from kernel import Component, Data
+
+
+class TextDisplay(Component):
+
+
+	drawn = True
+	updated = True
+
+
+	def __init__(self, y_offset):
+
+		super().__init__()
+
+		self.position.set(0, y_offset)
+
+		self.buffer = [] # (ttl, str)
+
+	@property
+	def text(self):
+
+		if self.buffer:
+			return self.buffer[0][1]
+
+		else:
+			return None
+
+	def push_text(self, text, ttl=None):
+
+		if ttl is None:
+			word_count = len(text.split(" "))
+			ttl = word_count + 0.1*word_count
+
+		self.buffer.append([ttl, text])
+
+	def update(self, dt):
+
+		if self.buffer:
+
+			self.buffer[0][0] -= dt
+
+			if self.buffer[0][0] <= 0:
+				del self.buffer[0]
+
+	def draw(self, window, reference):
+
+		if self.text:
+
+			p = self.get_relative_position(reference)
+			my, mx = window.getmaxyx()
+
+			if 0 <= p.y < my:
+
+				start_x = p.x - len(self.text)//2
+
+				str_start_x = max(0, -start_x)
+				str_end_x = min(len(self.text), mx - max(0, start_x))
+
+				self.game_object.state_manager.defer(lambda x=max(0, start_x), y=p.y, t=self.text[str_start_x:str_end_x], window=window: window.addstr(y, x, t))
+
+
+Data.exported = TextDisplay
