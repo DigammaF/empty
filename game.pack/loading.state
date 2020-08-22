@@ -1,0 +1,90 @@
+"""
+
+"""
+
+import curses
+import os
+
+from kernel import State, Data, ColorSys, UISystem, TextInput
+
+
+class Loading(State):
+
+
+	def __init__(self, state_manager, window, text):
+
+		State.__init__(self, state_manager, window)
+
+		self.text = text
+
+		self.incr_max = None
+		self.incr = None
+
+	def init(self):
+
+		self.n = 0
+
+		self.resume()
+
+	def cleanup(self):
+		pass
+
+	def handle_events(self):
+		pass
+
+	def update(self, dt):
+		pass
+
+	def draw(self):
+
+		self.window.clear()
+
+		my, mx = self.window.getmaxyx()
+
+		self.window.addstr(3, (mx - len(self.text))//2, self.text)
+
+		n = self.n if self.incr_max is None else self.incr/self.incr_max
+
+		progress_str = f"{(n*100):.2f} %"
+
+		self.window.addstr(my//2, (mx - len(progress_str))//2, progress_str)
+
+		self.window.refresh()
+
+	def pause(self):
+		pass
+
+	def resume(self):
+
+		curses.curs_set(False)
+		self.window.nodelay(True)
+
+		self.window.bkgd(" ", self.state_manager.color_sys.get_color(
+			ColorSys.WHITE,
+			ColorSys.BLACK,
+		))
+
+		self.window.attrset(self.state_manager.color_sys.get_color(
+			ColorSys.WHITE,
+			ColorSys.BLACK,
+		))
+
+		my, mx = self.window.getmaxyx()
+
+		self.window.refresh()
+
+	def endframe(self):
+		pass
+
+	def progress_callback(self, n):
+		self.n = n
+
+	def do_incr(self, *args, **kwargs):
+		self.incr += 1
+
+	def set_incr_max(self, v):
+		self.incr_max = v
+		self.incr = 0
+
+
+Data.exported = Loading

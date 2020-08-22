@@ -6,7 +6,7 @@
 from kernel import Space, ColorSys, Data, V
 
 
-def get_debug_space(state_manager):
+def get_debug_space(state_manager, progress_callback=None):
 
 	space = Space.new()
 

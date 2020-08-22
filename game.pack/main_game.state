@@ -1,23 +1,32 @@
 """
-	REQ debug.space
+	REQ debug.space, main.space, stresstest.space, loading.state
 """
 
 
 import curses
+import threading
 
-from kernel import State, V, ColorSys, Data, Config
+from kernel import State, V, ColorSys, Data, Config, Space
 
 
 class MainGame(State):
 
 
+	def __init__(self, state_manager, window, space):
+
+		State.__init__(self, state_manager, window)
+
+		self.space = space
+
 	def init(self):
 
-		self.space = Data.spaces["game"]["debug"](self.state_manager)
 		self.dt_hist = []
 		self.dt_hist_size = 300
 
 		self.resume()
+
+	def setup_space(self, saved):
+		self.space = Space.load(saved["space"], self.state_manager)
 
 	def cleanup(self):
 		pass
@@ -36,7 +45,8 @@ class MainGame(State):
 			return
 
 		if char == Config.instance.keybinding["kuit game"]:
-			self.state_manager.quit()
+
+			threading.Thread(target=self.do_order_save).start()
 			return
 
 		if char == Config.instance.keybinding["move up"]:
@@ -71,7 +81,24 @@ class MainGame(State):
 			self.space.get_obj("player").blit_com.set(V(-1, 0))
 			return
 
+	def do_order_save(self):
+
+		loading_state = self.state_manager.push_state(self.window, Data.states["game"]["loading"],
+													  "Saving game objects ...")
+
+		loading_state.set_incr_max(len(self.space.register))
+
+		saved_space = self.space.save(save_game_obj_callback=loading_state.do_incr)
+
+		self.state_manager.saved = lambda self=self: [{
+			"space": saved_space,
+		}, self.state_manager.quit()][0]
+
+		self.state_manager.save_at_endframe = True
+
 	def update(self, dt):
+
+		if self.space is None: return
 
 		self.space.update(dt)
 
@@ -81,6 +108,8 @@ class MainGame(State):
 			del self.dt_hist[0]
 
 	def draw(self):
+
+		if self.space is None: return
 
 		my, mx = self.window.getmaxyx()
 

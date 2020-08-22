@@ -12,5 +12,18 @@ class Legs(Component):
 
 		self.base_walk_cost = base_walk_cost
 
+	@classmethod
+	def blank(cls):
+		return cls(0)
+
+	def save_custom(self):
+		return {
+			"base_walk_cost": self.base_walk_cost,
+		}
+
+	def load_custom(self, saved):
+
+		self.base_walk_cost = saved["base_walk_cost"]
+
 
 Data.exported = Legs

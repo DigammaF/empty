@@ -1,6 +1,10 @@
 
 
 from abc import ABC, abstractmethod
+from json import dumps, loads
+
+from .data import Data
+from .config import Config
 
 
 class State(ABC):
@@ -66,6 +70,9 @@ class StateManager(ABC):
 		self.running = True
 		self.window = window
 
+		self.save_at_endframe = False
+		self.saved = None
+
 	@abstractmethod
 	def init(self):
 		pass
@@ -117,9 +124,31 @@ class StateManager(ABC):
 		self.current_state.draw()
 
 	def endframe(self):
+
 		self.do_defers()
 		self.empty_defer_stack()
 		self.current_state.endframe()
+
+		if self.save_at_endframe:
+
+			self.save_at_endframe = False
+
+			with open(Data.save_dir/Data.save_name, "w", encoding="utf-8") as f:
+				f.write(dumps(
+					{
+						"saved": self.saved(),
+						"packs": Config.instance.packs,
+					},
+					indent=2,
+				))
+
+	def get_saved_at_endframe(self):
+
+		with open(Data.save_dir/Data.save_name, "r", encoding="utf-8") as f:
+
+			content = loads(f.read())
+
+			return content
 
 	def defer(self, f):
 		self.current_state.defer(f)

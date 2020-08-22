@@ -1,6 +1,6 @@
 
 
-from kernel import Component, Data
+from kernel import Component, Data, V
 
 
 class TextDisplay(Component):
@@ -17,6 +17,21 @@ class TextDisplay(Component):
 		self.position.set(0, y_offset)
 
 		self.buffer = [] # (ttl, str)
+
+	@classmethod
+	def blank(cls):
+		return cls(0)
+
+	def save_custom(self):
+		return {
+			"position": self.position.save(),
+			"buffer": self.buffer,
+		}
+
+	def load_custom(self, saved):
+
+		self.position.set(V.load(saved["position"]))
+		self.buffer = saved["buffer"]
 
 	@property
 	def text(self):
@@ -44,16 +59,15 @@ class TextDisplay(Component):
 			if self.buffer[0][0] <= 0:
 				del self.buffer[0]
 
-	def draw(self, window, reference):
+	def draw(self, window, reference, relative_position):
 
 		if self.text:
 
-			p = self.get_relative_position(reference)
 			my, mx = window.getmaxyx()
 
 			if 0 <= p.y < my:
 
-				start_x = p.x - len(self.text)//2
+				start_x = relative_position.x - len(self.text)//2
 
 				str_start_x = max(0, -start_x)
 				str_end_x = min(len(self.text), mx - max(0, start_x))

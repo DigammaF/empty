@@ -19,5 +19,11 @@ class APRefill(Component):
 
 		self.game_object.ap = max(0, self.game_object.ap - dt*self.f)
 
+	def save_custom(self):
+		return {"f": self.f}
+
+	def load_custom(self, saved):
+		self.f = saved["f"]
+
 
 Data.exported = APRefill

@@ -2,7 +2,11 @@
 
 import curses
 
-from .vector2d import V
+from itertools import chain
+
+from .quadtree import Quad
+from .vector2d import V, Rect
+from .game_object import GameObject
 
 
 class Space:
@@ -10,31 +14,114 @@ class Space:
 
 	def __init__(self, data: dict,
 				 register: dict=None,
-				 game_objects_indexes: list=None):
+				 game_objects_indexes: list=None,
+				 play_area: Rect=None,
+				 area_register: list=None,
+				 area_map: list=None,
+				 ):
+
+		if play_area is None:
+			play_area = Rect(V(0, 0), V(0, 0))
+
+		self.play_area = play_area
+		# play area is the area covered by the quadtree and pathfinding systems
+
+		if area_register is None:
+			area_register = {} # index(str): dict
+			"""
+			
+				{
+					"coords": [(int, int)],
+					"facilities": [(type: str, int, int)],
+					"type": str,
+				}
+			
+			"""
+
+		self.area_register = area_register
+
+		if area_map is None:
+			area_map = {} # (int, int): index(str)
+
+		self.area_map = area_map
 
 		self.data = data # (int, int): [int]
 
 		if game_objects_indexes is None and register is not None:
-			game_objects_indexes = register.keys()[:]
+			game_objects_indexes = list(register.keys())
 
 		self.register = register # index: GameObject
 
 		self.game_objects_indexes = [] # sorted by layer
+		self.updated_objs = []
+
+		self.static_obj_indexes = []
+		self.dyn_obj_indexes = []
 
 		for game_object_index in game_objects_indexes:
-			self.add_game_object(register[game_object_index], game_object_index)
+			self.add_game_object(register[game_object_index], game_object_index, index_exist_ok=True)
 
 		self.camera = V(0, 0)
 
-		self.updated_objs = [obj for obj in register.values() if obj.updated]
+		self.static_quadtree: Quad = None
+		self.dynamic_quadtree: Quad = None
+
+		#self.updated_objs = [obj for obj in register.values() if obj.updated]
+		# self.add_game_object does that already
 
 	@classmethod
-	def new(cls):
+	def new(cls, register=None):
+
+		if register is None: register = {}
+
 		return Space(
 			data={},
-			register={},
-			game_objects_indexes=[],
+			register=register,
+			game_objects_indexes=None,
 		)
+
+	def save(self, save_game_obj_callback=lambda index:None):
+		return {
+			#"data": [(k[0], k[1], v) for k, v in self.data.items()],
+			"data": {},
+			"register": {index: [game_obj.save(), save_game_obj_callback(index)][0] for index, game_obj in self.register.items()},
+			#"game_objects_indexes": self.game_objects_indexes,
+			"game_objects_indexes": [],
+			"play_area": self.play_area.save(),
+			"area_register": self.area_register,
+			"area_map": self.area_map,
+		}
+
+	@staticmethod
+	def load(saved, state_manager):
+		return Space(
+			#data={(i[0], i[1]): i[2] for i in saved["data"]},
+			data={},
+			register={index: GameObject.load(s, state_manager) for index, s in saved["register"].items()},
+			#game_objects_indexes=saved["game_objects_indexes"],
+			game_objects_indexes=None,
+			play_area=Rect.load(saved["play_area"]),
+			area_map=saved["area_map"],
+			area_register=saved["area_register"],
+		)
+
+	def build_static_quadtree(self):
+
+		self.static_quadtree = Quad(self.play_area, 10)
+
+		for index in self.static_obj_indexes:
+
+			obj = self.get_obj(index)
+			self.static_quadtree.put(index, obj.position)
+
+	def build_dynamic_quadtree(self):
+
+		self.dynamic_quadtree = Quad(self.play_area, 10)
+
+		for index in self.dyn_obj_indexes:
+
+			obj = self.get_obj(index)
+			self.dynamic_quadtree.put(index, obj.position)
 
 	def is_walkable(self, x, y=None):
 
@@ -77,25 +164,33 @@ class Space:
 			self.data[x, y] = []
 			return self.data[x, y]
 
-	def add_game_object(self, game_object, index=None):
+	def add_game_object(self, game_object, index=None, index_exist_ok=False):
 
 		game_object.space = self
+
+		# =============================================
 
 		if game_object.updated:
 			self.updated_objs.append(game_object)
 
-		if index and index in self.register:
+		# =============================================
+
+		if index and index in self.register and not index_exist_ok:
 			raise RuntimeError(f"Err: tried to add game object with an alreay existing index ({index})")
 
 		if index is None:
 
 			index = 0
 
-			while index in self.register:
+			while str(index) in self.register:
 				index += 1
+
+			index = str(index)
 
 		game_object.index = index
 		self.register[index] = game_object
+
+		[self.dyn_obj_indexes, self.static_obj_indexes][game_object.static].append(game_object.index)
 
 		for i in range(len(self.game_objects_indexes)):
 
@@ -114,14 +209,16 @@ class Space:
 
 		obj = self.register[index]
 
-		obj.space = None
-
 		if obj.updated:
 			self.updated_objs.remove(obj)
+
+		[self.dyn_obj_indexes, self.static_obj_indexes][obj.static].remove(index)
 
 		self.xunplace_game_object(obj)
 		del self.register[index]
 		self.game_objects_indexes.remove(index)
+
+		obj.space = None
 
 	def place_game_object(self, index, x, y=None):
 
@@ -149,7 +246,9 @@ class Space:
 
 		my, mx = window.getmaxyx()
 
-		for game_object_index in self.game_objects_indexes:
+		q = Rect(self.camera, V(self.camera.x - mx + 1, self.camera.y - my + 1))
+
+		for game_object_index in chain(self.static_quadtree.query(q), self.dynamic_quadtree.query(q)):
 
 			game_object = self.register[game_object_index]
 
@@ -161,7 +260,7 @@ class Space:
 						0 <= obj_rel_pos.y < my:
 
 					try:
-						game_object.draw(window, reference)
+						game_object.draw(window, reference, obj_rel_pos)
 
 					except curses.error:
 						pass
@@ -199,3 +298,8 @@ class Space:
 
 		for obj in self.updated_objs:
 			obj.update(dt)
+
+		if self.static_quadtree is None:
+			self.build_static_quadtree()
+
+		self.build_dynamic_quadtree()

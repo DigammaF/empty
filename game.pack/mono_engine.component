@@ -1,6 +1,6 @@
 
 
-from kernel import Component, Data
+from kernel import Component, Data, V
 
 
 class MonoEngine(Component):
@@ -9,14 +9,33 @@ class MonoEngine(Component):
 	updated = True
 
 
-	def __init__(self, direction, owner, damage, ttl):
+	def __init__(self, direction, owner_index, damage, ttl):
 
 		super().__init__()
 
 		self.direction = direction
-		self.owner = owner
+		self.owner = owner_index # index
 		self.damage = damage
 		self.ttl = ttl
+
+	@classmethod
+	def blank(cls):
+		return cls(None, None, None, None)
+
+	def save_custom(self):
+		return {
+			"direction": self.direction.save(),
+			"owner": self.owner,
+			"damage": self.damage,
+			"ttl": self.ttl,
+		}
+
+	def load_custom(self, saved):
+
+		self.direction = V.load(saved["direction"])
+		self.owner = saved["owner"]
+		self.damage = saved["damage"]
+		self.ttl = saved["ttl"]
 
 	def update(self, dt):
 

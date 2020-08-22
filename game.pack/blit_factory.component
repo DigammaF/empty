@@ -18,16 +18,40 @@ class BlitFactory(Component):
 		self.travel_cost = travel_cost
 		self.ttl = ttl
 
+	@classmethod
+	def blank(cls):
+		return cls(
+			damage=0,
+			cost=0,
+			travel_cost=0,
+			ttl=0,
+		)
+
 	def new_blit(self, position, direction):
 		return Data.game_objects["game"]["blit"](
 			state_manager=self.state_manager,
-			owner=self.game_object,
+			owner_index=self.game_object.index,
 			position=position,
 			damage=self.damage,
 			direction=direction,
 			ttl=self.ttl,
 			travel_cost=self.travel_cost,
 		)
+
+	def save_custom(self):
+		return {
+			"damage": self.damage,
+			"cost": self.cost,
+			"travel_cost": self.travel_cost,
+			"ttl": self.ttl,
+		}
+
+	def load_custom(self, saved):
+
+		self.damage = saved["damage"]
+		self.cost = saved["cost"]
+		self.travel_cost = saved["travel_cost"]
+		self.ttl = saved["ttl"]
 
 
 Data.exported = BlitFactory

@@ -1,0 +1,59 @@
+"""
+	REQ pawn.game_object, block.game_object, blit_factory.component
+"""
+
+import random
+
+from itertools import product, count
+
+from kernel import Space, ColorSys, Data, V, Rect
+
+
+def get_stresstest_space(state_manager, progress_callback=None, product=product, count=count):
+
+	rg = 100 # 150
+
+	"""
+	space = Space.new()
+
+	space.add_game_object(Data.game_objects["game"]["pawn"](
+		state_manager,
+		V(0, 0),
+		"T",
+		ColorSys.BLUE,
+		Data.components["game"]["blit_factory"](cost=1, damage=1/3, travel_cost=0.05, ttl=4),
+	), "player")
+	
+	i = 0
+
+	for x in range(-rg, rg):
+		for y in range(-rg, rg):
+			i += 1
+			if progress_callback: progress_callback(i/((rg*2)**2))
+			if random.randint(0, 3) == 0:
+				space.add_game_object(Data.game_objects["game"]["block"](state_manager, V(x, y)))
+	"""
+
+	space = Space.new({
+		index: [Data.game_objects["game"]["block"](state_manager, V(p[0], p[1])), progress_callback(index/((rg*2)**2)) if progress_callback else None][0]
+		for p, index in zip(product(range(-rg, rg), repeat=2), count(0))
+		if random.randint(0, 3) == 0
+	})
+
+	space.add_game_object(Data.game_objects["game"]["pawn"](
+		state_manager,
+		V(0, 0),
+		"T",
+		ColorSys.BLUE,
+		Data.components["game"]["blit_factory"](cost=1, damage=1 / 3, travel_cost=0.05, ttl=4),
+	), "player")
+
+	space.play_area = Rect(
+		top_left=V(rg, rg),
+		bottom_right=V(-rg, -rg),
+	)
+
+	return space
+
+
+Data.exported = get_stresstest_space

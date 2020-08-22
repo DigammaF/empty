@@ -1,6 +1,6 @@
 
 
-from kernel import ColorSys, Component, Data
+from kernel import ColorSys, Component, Data, Config
 
 
 class Sprite(Component):
@@ -17,14 +17,33 @@ class Sprite(Component):
 		self.bg = bg
 		self.char = char
 
-	def draw(self, window, reference):
+	@classmethod
+	def blank(cls):
+		return cls(None, None, None)
 
-		p = self.get_relative_position(reference)
+	def draw(self, window, reference, relative_pos):
 
-		window.addstr(p.y, p.x, self.char, self.state_manager.color_sys.get_color(
-			self.fg,
-			self.bg,
-		))
+		if Config.instance.colors:
+			window.addstr(relative_pos.y, relative_pos.x, self.char, self.state_manager.color_sys.get_color(
+				self.fg,
+				self.bg,
+			))
+
+		else:
+			window.addstr(relative_pos.y, relative_pos.x, self.char)
+
+	def save_custom(self):
+		return {
+			"fg": self.fg,
+			"bg": self.bg,
+			"char": self.char,
+		}
+
+	def load_custom(self, saved):
+
+		self.fg = saved["fg"]
+		self.bg = saved["bg"]
+		self.char = saved["char"]
 
 
 Data.exported = Sprite

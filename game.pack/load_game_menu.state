@@ -1,0 +1,173 @@
+"""
+
+"""
+
+import curses, os
+
+from pathlib import Path
+
+from kernel import State, Data, ColorSys, Config, Space
+
+
+class LoadGameMenu(State):
+
+	def init(self):
+
+		self.ptr = 0
+		self.save_names = [name for name in os.listdir(str(Data.save_dir))]
+
+		if not self.save_names:
+			self.save_names = ["There is no save yet"]
+
+		self.display_span = 3
+
+		self.resume()
+
+	def cleanup(self):
+		pass
+
+	def handle_events(self):
+
+		try:
+
+			char = self.window.getkey()
+
+		except curses.error:  # no key pressed
+			return
+
+		if char == "q":
+			self.state_manager.pop_state()
+
+		try:
+
+			if char == "\n":
+
+				Data.save_name = self.save_names[self.ptr]
+
+				self.content = self.state_manager.get_saved_at_endframe()
+
+				packs = self.content["packs"]
+
+				sorted_packs = sorted(packs)
+				sorted_config_packs = sorted(Config.instance.packs)
+
+				if sorted_packs != sorted_config_packs:
+
+					txt_part = "Save's packs | Currently loaded packs\n" + "\n".join([(sorted_packs[i] if i < len(sorted_packs) else "") + " | " + (sorted_config_packs[i] if i < len(sorted_config_packs) else "") for i in range(max(len(sorted_config_packs), len(sorted_packs)))])
+
+					self.state_manager.push_state(self.window, Data.states["game"]["alert"],
+												  text=f"""
+This space was created using a different set of packs
+than those currently loaded.
+Loading it anyway may corrupt the save, or not, 
+and a backup copy will be created.
+
+You probably want to change settings accordingly
+and restart the game.
+
+{txt_part}
+									""".strip(),
+									choices=[
+										("Load anyway (/!\\)", self.choice_load_anyway),
+										("Change settings to load the correct set of packs and quit", self.choice_load_space_packs),
+										("Go back", self.choice_go_back),
+									])
+
+				else:
+					self.choice_load_anyway(create_backup=False)
+
+			if char == "KEY_UP":
+				self.ptr = (self.ptr - 1)%len(self.save_names)
+
+			if char == "KEY_DOWN":
+				self.ptr = (self.ptr + 1)%len(self.save_names)
+
+		except ZeroDivisionError:
+			pass
+
+		except IndexError:
+			pass
+
+		if char == "KEY_DC":
+
+			(Data.save_dir/self.save_names[self.ptr]).unlink()
+			self.save_names = [name for name in os.listdir(str(Data.save_dir))]
+
+			try:
+				self.ptr %= len(self.save_names)
+
+			except ZeroDivisionError:
+				self.ptr = 0
+
+	def choice_load_anyway(self, create_backup=True):
+
+		if create_backup:
+			with open(Data.save_dir/Data.save_name, "rb") as src:
+				with open(Data.save_dir/(Path(Data.save_name).stem + ".backup.save"), "wb") as dst:
+					dst.write(src.read())
+
+		saved = self.content["saved"]
+		space = Space.load(saved["space"], self.state_manager)
+
+		self.state_manager.push_state(self.window, Data.states["game"]["main_game"], space)
+
+	def choice_load_space_packs(self):
+
+		Config.instance.packs = self.content["packs"][:]
+		self.state_manager.quit()
+
+	def choice_go_back(self):
+
+		self.state_manager.pop_state()
+
+	def update(self, dt):
+		pass
+
+	def draw(self):
+
+		self.window.clear()
+
+		my, mx = self.window.getmaxyx()
+
+		self.window.addstr(0, mx//5, "q: go back to main menu, enter: load")
+		self.window.addstr(1, mx//5, "arrow up: up, arrow down: down, del: delete save")
+
+		y = 3
+		x = mx//3
+
+		for i in range(-self.display_span, self.display_span + 1):
+
+			try:
+				save_name = self.save_names[(self.ptr + i)%len(self.save_names)]
+
+			except ZeroDivisionError:
+				save_name = "None"
+
+			self.window.addstr(y, x, save_name, [curses.A_DIM, curses.A_BOLD][i == 0])
+			y += 1
+
+		self.window.refresh()
+
+	def pause(self):
+		pass
+
+	def resume(self):
+
+		curses.curs_set(False)
+		self.window.nodelay(True)
+
+		self.window.bkgd(" ", self.state_manager.color_sys.get_color(
+			ColorSys.WHITE,
+			ColorSys.BLACK,
+		))
+
+		self.window.attrset(self.state_manager.color_sys.get_color(
+			ColorSys.WHITE,
+			ColorSys.BLACK,
+		))
+
+	def endframe(self):
+		pass
+
+
+Data.exported = LoadGameMenu

@@ -1,0 +1,40 @@
+
+"""
+	REQ pawn.game_object, block.game_object, blit_factory.component
+"""
+
+
+from kernel import *
+
+
+def std_pawn(x, y, state_manager):
+
+	return Data.game_objects["game"]["pawn"](
+		state_manager,
+		V(x, y),
+		"T",
+		ColorSys.BLUE,
+		Data.components["game"]["blit_factory"](cost=1, damage=1/3, travel_cost=0.05, ttl=4)
+	)
+
+def block(x, y, state_manager):
+	return Data.game_objects["game"]["block"](state_manager, V(x, y))
+
+
+def exported(state_manager, std_pawn=std_pawn, block=block):
+
+	space = Space.new()
+
+	space.add_game_object(block(5, 4, state_manager), None)
+	space.add_game_object(block(5, 3, state_manager), None)
+	space.add_game_object(block(6, 3, state_manager), None)
+	space.add_game_object(block(7, 3, state_manager), None)
+	space.add_game_object(block(7, 4, state_manager), None)
+	space.add_game_object(std_pawn(6, 6, state_manager), "player")
+	space.play_area = Rect(V(4, 2), V(8, 7))
+	
+	return space
+
+
+Data.exported = exported
+

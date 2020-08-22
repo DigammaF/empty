@@ -1,0 +1,495 @@
+         52294458 function calls (37544902 primitive calls) in 47.447 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000   47.447   47.447 main.py:235(program)
+        1    0.000    0.000   47.366   47.366 C:\Program Files\Python37\lib\curses\__init__.py:67(wrapper)
+        1    0.126    0.126   47.336   47.336 main.py:194(main)
+    17523    0.025    0.000   31.052    0.002 C:\Users\maxim\Desktop\empty\kernel\state_system.py:123(draw)
+     3486    0.072    0.000   28.568    0.008 <string>:110(draw)
+     3486    3.878    0.001   28.397    0.008 C:\Users\maxim\Desktop\empty\kernel\space.py:243(draw)
+5785675/990245    4.529    0.000   14.985    0.000 C:\Users\maxim\Desktop\empty\kernel\quadtree.py:69(query)
+    17523    0.071    0.000   13.956    0.001 C:\Users\maxim\Desktop\empty\kernel\state_system.py:126(endframe)
+     4475   11.036    0.002   11.036    0.002 {method 'refresh' of '_curses.window' objects}
+     3487    0.011    0.000    8.602    0.002 <string>:144(endframe)
+  1906021    4.387    0.000    7.524    0.000 C:\Users\maxim\Desktop\empty\kernel\vector2d.py:135(is_inside)
+        1    0.050    0.050    5.106    5.106 C:\Program Files\Python37\lib\json\__init__.py:184(dumps)
+        1    0.468    0.468    5.056    5.056 C:\Program Files\Python37\lib\json\encoder.py:182(encode)
+   983273    2.394    0.000    4.790    0.000 C:\Users\maxim\Desktop\empty\kernel\vector2d.py:93(__sub__)
+  1838545    0.525    0.000    4.543    0.000 C:\Program Files\Python37\lib\json\encoder.py:413(_iterencode)
+   983273    1.252    0.000    4.154    0.000 C:\Users\maxim\Desktop\empty\kernel\game_object.py:212(draw)
+11742793/1838545    3.620    0.000    4.017    0.000 C:\Program Files\Python37\lib\json\encoder.py:333(_iterencode_dict)
+ 11469055    3.689    0.000    3.689    0.000 C:\Users\maxim\Desktop\empty\kernel\vector2d.py:56(x)
+   494944    0.430    0.000    3.287    0.000 C:\Users\maxim\Desktop\empty\kernel\quadtree.py:45(overlap)
+   983273    1.736    0.000    2.886    0.000 <string>:24(draw)
+   494944    1.783    0.000    2.857    0.000 C:\Users\maxim\Desktop\empty\kernel\vector2d.py:139(overlap)
+  9849723    2.824    0.000    2.824    0.000 C:\Users\maxim\Desktop\empty\kernel\vector2d.py:60(y)
+      895    0.006    0.000    1.640    0.002 <string>:40(draw)
+   993199    0.996    0.000    1.283    0.000 C:\Users\maxim\Desktop\empty\kernel\vector2d.py:15(__init__)
+    17523    0.033    0.000    1.223    0.000 C:\Users\maxim\Desktop\empty\kernel\state_system.py:117(handle_events)
+    17436    1.064    0.000    1.064    0.000 {method 'getkey' of '_curses.window' objects}
+    17523    0.035    0.000    0.844    0.000 C:\Users\maxim\Desktop\empty\kernel\state_system.py:120(update)
+       89    0.002    0.000    0.810    0.009 <string>:38(draw)
+    13054    0.052    0.000    0.809    0.000 <string>:21(handle_events)
+     3486    0.025    0.000    0.792    0.000 <string>:99(update)
+     3486    0.015    0.000    0.765    0.000 C:\Users\maxim\Desktop\empty\kernel\space.py:297(update)
+   989286    0.587    0.000    0.587    0.000 {method 'addstr' of '_curses.window' objects}
+        1    0.014    0.014    0.569    0.569 C:\Users\maxim\Desktop\empty\kernel\space.py:108(build_static_quadtree)
+59048/13595    0.111    0.000    0.564    0.000 C:\Users\maxim\Desktop\empty\kernel\quadtree.py:51(put)
+  2396470    0.529    0.000    0.529    0.000 {built-in method builtins.isinstance}
+   116228    0.063    0.000    0.418    0.000 C:\Users\maxim\Desktop\empty\kernel\quadtree.py:48(inside)
+     3487    0.031    0.000    0.277    0.000 <string>:34(handle_events)
+   474461    0.123    0.000    0.123    0.000 {built-in method _json.encode_basestring_ascii}
+     3713    0.027    0.000    0.116    0.000 C:\Users\maxim\Desktop\empty\kernel\game_object.py:204(update)
+        1    0.096    0.096    0.096    0.096 {built-in method _curses.resize_term}
+      895    0.003    0.000    0.095    0.000 <string>:30(handle_events)
+      895    0.003    0.000    0.087    0.000 C:\Users\maxim\Desktop\empty\kernel\ui.py:17(handle_events)
+      895    0.006    0.000    0.083    0.000 C:\Users\maxim\Desktop\empty\kernel\ui.py:93(handle_events)
+        1    0.000    0.000    0.078    0.078 main.py:165(load_packs)
+        1    0.004    0.004    0.075    0.075 main.py:53(load_pack)
+       21    0.069    0.003    0.069    0.003 {method 'write' of '_io.TextIOWrapper' objects}
+     3486    0.031    0.000    0.064    0.000 C:\Users\maxim\Desktop\empty\kernel\space.py:117(build_dynamic_quadtree)
+    17523    0.028    0.000    0.054    0.000 C:\Users\maxim\Desktop\empty\kernel\state_system.py:156(do_defers)
+     3486    0.020    0.000    0.051    0.000 C:\Users\maxim\Desktop\empty\kernel\space.py:144(focus_on)
+   105145    0.046    0.000    0.046    0.000 C:\Users\maxim\Desktop\empty\kernel\state_system.py:84(current_state)
+       93    0.045    0.000    0.045    0.000 {method 'join' of 'str' objects}
+    17523    0.022    0.000    0.043    0.000 C:\Users\maxim\Desktop\empty\kernel\state_system.py:159(empty_defer_stack)
+     3713    0.016    0.000    0.041    0.000 C:\Users\maxim\Desktop\empty\kernel\game_object.py:250(update_position)
+    34/22    0.023    0.001    0.033    0.002 {built-in method builtins.exec}
+       20    0.001    0.000    0.032    0.002 main.py:29(get_info)
+       20    0.000    0.000    0.031    0.002 main.py:23(get_doc)
+      548    0.013    0.000    0.029    0.000 C:\Users\maxim\Desktop\empty\kernel\quadtree.py:81(do_split)
+       21    0.000    0.000    0.027    0.001 main.py:103(load_item)
+     3713    0.017    0.000    0.027    0.000 <string>:18(update)
+     3583    0.023    0.000    0.023    0.000 {built-in method builtins.sum}
+        1    0.022    0.022    0.022    0.022 {built-in method _curses.endwin}
+7772/3886    0.016    0.000    0.021    0.000 C:\Users\maxim\Desktop\empty\kernel\vector2d.py:42(set)
+     5331    0.014    0.000    0.020    0.000 C:\Users\maxim\Desktop\empty\kernel\vector2d.py:96(__bool__)
+     5679    0.020    0.000    0.020    0.000 C:\Users\maxim\Desktop\empty\kernel\quadtree.py:13(__init__)
+    88966    0.018    0.000    0.018    0.000 {built-in method builtins.id}
+        2    0.000    0.000    0.017    0.009 <string>:55(resume)
+    17523    0.017    0.000    0.017    0.000 C:\Users\maxim\Desktop\empty\kernel\state_system.py:60(empty_defer_stack)
+    88965    0.016    0.000    0.016    0.000 {method 'items' of 'dict' objects}
+     6972    0.009    0.000    0.016    0.000 <string>:62(draw)
+        3    0.000    0.000    0.015    0.005 C:\Users\maxim\Desktop\empty\kernel\state_system.py:88(push_state)
+    17523    0.015    0.000    0.015    0.000 C:\Users\maxim\Desktop\empty\kernel\state_system.py:55(do_defers)
+    17524    0.015    0.000    0.015    0.000 {built-in method time.time}
+     3713    0.006    0.000    0.015    0.000 C:\Users\maxim\Desktop\empty\kernel\game_object.py:283(handle_blit_com)
+       20    0.000    0.000    0.015    0.001 C:\Program Files\Python37\lib\ast.py:30(parse)
+       20    0.015    0.001    0.015    0.001 {built-in method builtins.compile}
+        1    0.000    0.000    0.015    0.015 <string>:14(init)
+       20    0.000    0.000    0.014    0.001 C:\Program Files\Python37\lib\ast.py:198(get_docstring)
+     4473    0.013    0.000    0.013    0.000 {method 'clear' of '_curses.window' objects}
+      5/1    0.000    0.000    0.013    0.013 <frozen importlib._bootstrap>:978(_find_and_load)
+      5/1    0.000    0.000    0.013    0.013 <frozen importlib._bootstrap>:948(_find_and_load_unlocked)
+      5/1    0.000    0.000    0.012    0.012 <frozen importlib._bootstrap>:663(_load_unlocked)
+      4/1    0.000    0.000    0.012    0.012 <frozen importlib._bootstrap_external>:720(exec_module)
+    17166    0.012    0.000    0.012    0.000 C:\Users\maxim\Desktop\empty\kernel\space.py:149(get_obj)
+        2    0.000    0.000    0.011    0.006 C:\Program Files\Python37\lib\threading.py:829(start)
+        2    0.000    0.000    0.011    0.006 C:\Program Files\Python37\lib\threading.py:534(wait)
+        2    0.000    0.000    0.011    0.006 C:\Program Files\Python37\lib\threading.py:264(wait)
+        8    0.011    0.001    0.011    0.001 {method 'acquire' of '_thread.lock' objects}
+     3797    0.010    0.000    0.010    0.000 {built-in method builtins.max}
+      6/1    0.000    0.000    0.010    0.010 <frozen importlib._bootstrap>:211(_call_with_frames_removed)
+        1    0.000    0.000    0.010    0.010 C:\Program Files\Python37\lib\inspect.py:31(<module>)
+     2192    0.003    0.000    0.008    0.000 C:\Users\maxim\Desktop\empty\kernel\quadtree.py:30(_create_child_quad)
+     7961    0.008    0.000    0.008    0.000 {method 'getmaxyx' of '_curses.window' objects}
+    25807    0.008    0.000    0.008    0.000 {built-in method builtins.len}
+    17524    0.008    0.000    0.008    0.000 C:\Users\maxim\Desktop\empty\kernel\state_system.py:111(get_running_state)
+        1    0.000    0.000    0.007    0.007 <string>:89(set_save_name)
+        1    0.000    0.000    0.007    0.007 C:\Program Files\Python37\lib\curses\__init__.py:29(initscr)
+        1    0.006    0.006    0.006    0.006 {built-in method _curses.initscr}
+     6972    0.006    0.000    0.006    0.000 <string>:36(text)
+     7426    0.006    0.000    0.006    0.000 C:\Users\maxim\Desktop\empty\kernel\game_object.py:225(has_ap)
+      895    0.003    0.000    0.006    0.000 C:\Users\maxim\Desktop\empty\kernel\ui.py:34(catch_events)
+       42    0.002    0.000    0.005    0.000 C:\Program Files\Python37\lib\zipfile.py:1409(open)
+        6    0.005    0.001    0.005    0.001 {built-in method io.open}
+     6972    0.005    0.000    0.005    0.000 <string>:53(update)
+       42    0.000    0.000    0.005    0.000 C:\Program Files\Python37\lib\zipfile.py:853(read)
+    17523    0.005    0.000    0.005    0.000 {method 'append' of 'list' objects}
+      895    0.002    0.000    0.005    0.000 C:\Users\maxim\Desktop\empty\kernel\ui.py:29(draw)
+     5678    0.005    0.000    0.005    0.000 C:\Users\maxim\Desktop\empty\kernel\vector2d.py:114(__init__)
+       42    0.001    0.000    0.005    0.000 C:\Program Files\Python37\lib\zipfile.py:933(_read1)
+        4    0.000    0.000    0.004    0.001 <frozen importlib._bootstrap_external>:791(get_code)
+        5    0.000    0.000    0.004    0.001 <frozen importlib._bootstrap>:882(_find_spec)
+       71    0.000    0.000    0.004    0.000 C:\Program Files\Python37\lib\pathlib.py:980(__new__)
+       23    0.004    0.000    0.004    0.000 {built-in method nt.stat}
+        4    0.000    0.000    0.004    0.001 <frozen importlib._bootstrap_external>:1268(find_spec)
+        4    0.000    0.000    0.004    0.001 <frozen importlib._bootstrap_external>:1236(_get_spec)
+       71    0.000    0.000    0.003    0.000 C:\Program Files\Python37\lib\pathlib.py:635(_from_parts)
+       10    0.000    0.000    0.003    0.000 <frozen importlib._bootstrap_external>:1352(find_spec)
+       19    0.000    0.000    0.003    0.000 <frozen importlib._bootstrap_external>:74(_path_stat)
+        2    0.000    0.000    0.003    0.002 C:\Program Files\Python37\lib\zipfile.py:1150(__init__)
+       72    0.001    0.000    0.003    0.000 C:\Program Files\Python37\lib\pathlib.py:615(_parse_args)
+    13053    0.003    0.000    0.003    0.000 <string>:46(update)
+        1    0.000    0.000    0.003    0.003 main.py:146(get_pack_info)
+      895    0.002    0.000    0.003    0.000 C:\Users\maxim\Desktop\empty\kernel\ui.py:119(draw)
+       97    0.000    0.000    0.003    0.000 C:\Users\maxim\Desktop\empty\kernel\space.py:291(relocate)
+        2    0.001    0.000    0.003    0.001 C:\Program Files\Python37\lib\zipfile.py:1259(_RealGetContents)
+    13053    0.003    0.000    0.003    0.000 <string>:49(draw)
+    13053    0.003    0.000    0.003    0.000 <string>:98(endframe)
+      126    0.001    0.000    0.002    0.000 C:\Program Files\Python37\lib\zipfile.py:712(read)
+        9    0.001    0.000    0.002    0.000 C:\Program Files\Python37\lib\collections\__init__.py:316(namedtuple)
+        1    0.000    0.000    0.002    0.002 C:\Program Files\Python37\lib\dis.py:3(<module>)
+        1    0.001    0.001    0.002    0.002 C:\Users\maxim\Desktop\empty\kernel\config.py:33(__exit__)
+      227    0.001    0.000    0.002    0.000 <string>:40(update)
+        1    0.000    0.000    0.002    0.002 C:\Users\maxim\Desktop\empty\kernel\state_system.py:102(pop_state)
+        4    0.000    0.000    0.002    0.000 <frozen importlib._bootstrap_external>:521(_compile_bytecode)
+        4    0.002    0.000    0.002    0.000 {built-in method marshal.loads}
+  204/102    0.001    0.000    0.002    0.000 C:\Users\maxim\Desktop\empty\kernel\space.py:126(is_walkable)
+      895    0.001    0.000    0.002    0.000 <string>:36(update)
+       24    0.001    0.000    0.002    0.000 {built-in method builtins.__build_class__}
+       72    0.001    0.000    0.002    0.000 C:\Program Files\Python37\lib\pathlib.py:50(parse_parts)
+       42    0.002    0.000    0.002    0.000 {method 'decompress' of 'zlib.Decompress' objects}
+  613/507    0.001    0.000    0.002    0.000 C:\Users\maxim\Desktop\empty\kernel\space.py:155(get_indexes_at)
+       42    0.000    0.000    0.002    0.000 C:\Program Files\Python37\lib\zipfile.py:969(_read2)
+       42    0.001    0.000    0.001    0.000 C:\Program Files\Python37\lib\zipfile.py:764(__init__)
+        1    0.000    0.000    0.001    0.001 C:\Users\maxim\Desktop\empty\kernel\config.py:12(__enter__)
+     2725    0.001    0.000    0.001    0.000 {method 'values' of 'dict' objects}
+      101    0.000    0.000    0.001    0.000 C:\Users\maxim\Desktop\empty\kernel\space.py:240(xunplace_game_object)
+      895    0.001    0.000    0.001    0.000 C:\Users\maxim\Desktop\empty\kernel\ui.py:42(<listcomp>)
+      170    0.001    0.000    0.001    0.000 {method 'tell' of '_io.BufferedReader' objects}
+        6    0.001    0.000    0.001    0.000 {built-in method builtins.print}
+   194/97    0.001    0.000    0.001    0.000 C:\Users\maxim\Desktop\empty\kernel\space.py:135(get_walk_cost)
+      101    0.000    0.000    0.001    0.000 C:\Users\maxim\Desktop\empty\kernel\space.py:230(xplace_game_object)
+  202/101    0.001    0.000    0.001    0.000 C:\Users\maxim\Desktop\empty\kernel\space.py:233(unplace_game_object)
+        4    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:949(path_stats)
+      132    0.001    0.000    0.001    0.000 {method 'read' of '_io.BufferedReader' objects}
+        4    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:912(get_data)
+      105    0.001    0.000    0.001    0.000 {method 'decode' of 'bytes' objects}
+        4    0.001    0.000    0.001    0.000 {built-in method _curses.curs_set}
+      106    0.000    0.000    0.001    0.000 C:\Users\maxim\Desktop\empty\kernel\vector2d.py:90(__add__)
+      909    0.001    0.000    0.001    0.000 {built-in method builtins.any}
+        4    0.000    0.000    0.001    0.000 <string>:30(new_blit)
+  202/101    0.000    0.000    0.001    0.000 C:\Users\maxim\Desktop\empty\kernel\space.py:223(place_game_object)
+        5    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:84(_path_is_mode_type)
+      100    0.000    0.000    0.001    0.000 C:\Program Files\Python37\lib\pathlib.py:769(suffix)
+        4    0.000    0.000    0.001    0.000 <string>:9(new_blit)
+        4    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:93(_path_isfile)
+       42    0.000    0.000    0.001    0.000 C:\Program Files\Python37\lib\zipfile.py:985(close)
+      895    0.001    0.000    0.001    0.000 C:\Users\maxim\Desktop\empty\kernel\ui.py:22(update)
+        5    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap>:576(module_from_spec)
+      101    0.000    0.000    0.001    0.000 C:\Users\maxim\Desktop\empty\kernel\space.py:269(compute_collisions)
+        4    0.000    0.000    0.001    0.000 C:\Program Files\Python37\lib\pathlib.py:1313(exists)
+        1    0.000    0.000    0.001    0.001 C:\Program Files\Python37\lib\opcode.py:7(<module>)
+        4    0.000    0.000    0.001    0.000 C:\Program Files\Python37\lib\pathlib.py:1135(stat)
+        7    0.000    0.000    0.001    0.000 C:\Program Files\Python37\lib\abc.py:125(__new__)
+        1    0.000    0.000    0.001    0.001 C:\Users\maxim\Desktop\empty\kernel\config.py:50(__init__)
+        2    0.000    0.000    0.001    0.000 C:\Program Files\Python37\lib\zipfile.py:229(_EndRecData)
+       85    0.001    0.000    0.001    0.000 {built-in method __new__ of type object at 0x00007FFEEAF30740}
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\curses\__init__.py:46(start_color)
+       42    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\zipfile.py:675(_get_decompressor)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:504(_init_module_attrs)
+       13    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\inspect.py:613(cleandoc)
+        1    0.000    0.000    0.000    0.000 {built-in method _curses.start_color}
+        4    0.000    0.000    0.000    0.000 {method 'read' of '_io.FileIO' objects}
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:269(cache_from_source)
+        4    0.000    0.000    0.000    0.000 <string>:62(<lambda>)
+        4    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\game_object.py:247(vanish)
+       42    0.000    0.000    0.000    0.000 {built-in method zlib.decompressobj}
+      177    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\pathlib.py:761(name)
+        1    0.000    0.000    0.000    0.000 <string>:15(init)
+        4    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\space.py:167(add_game_object)
+        4    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\space.py:208(rem_game_object)
+       49    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\pathlib.py:788(stem)
+      113    0.000    0.000    0.000    0.000 {method 'remove' of 'list' objects}
+       42    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\zipfile.py:886(_update_crc)
+       56    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:56(_path_join)
+      134    0.000    0.000    0.000    0.000 {method 'seek' of '_io.BufferedReader' objects}
+       42    0.000    0.000    0.000    0.000 {method 'flush' of 'zlib.Decompress' objects}
+       42    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\zipfile.py:316(__init__)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:147(__enter__)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:403(cached)
+        2    0.000    0.000    0.000    0.000 {built-in method nt.listdir}
+       84    0.000    0.000    0.000    0.000 {built-in method zlib.crc32}
+        4    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\game_object.py:140(__init__)
+       84    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\encodings\cp437.py:14(decode)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:367(_get_cached)
+      895    0.000    0.000    0.000    0.000 <string>:79(endframe)
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\enum.py:134(__new__)
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\json\__init__.py:121(dump)
+       30    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:1009(_handle_fromlist)
+       42    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\zipfile.py:723(close)
+       72    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\pathlib.py:132(splitroot)
+       13    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1199(_path_importer_cache)
+      130    0.000    0.000    0.000    0.000 {built-in method _struct.unpack}
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:157(_get_module_lock)
+        2    0.000    0.000    0.000    0.000 {built-in method _thread.start_new_thread}
+       42    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\zipfile.py:433(_decodeExtra)
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\json\__init__.py:275(load)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1186(_path_hooks)
+       44    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\zipfile.py:1892(_fpclose)
+      149    0.000    0.000    0.000    0.000 {method 'rfind' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\opcode.py:37(<listcomp>)
+       84    0.000    0.000    0.000    0.000 {built-in method _codecs.charmap_decode}
+      131    0.000    0.000    0.000    0.000 {built-in method sys.intern}
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:62(_path_split)
+      188    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+        5    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\space.py:280(compute_collision_enter)
+       56    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:58(<listcomp>)
+        1    0.000    0.000    0.000    0.000 {method 'readlines' of '_io._IOBase' objects}
+        4    0.000    0.000    0.000    0.000 {method 'insert' of 'list' objects}
+        2    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\threading.py:758(__init__)
+        1    0.000    0.000    0.000    0.000 <string>:5(<module>)
+       89    0.000    0.000    0.000    0.000 {method 'replace' of 'str' objects}
+      111    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 <string>:57(resume)
+        7    0.000    0.000    0.000    0.000 {built-in method _abc._abc_init}
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1347(_get_spec)
+        1    0.000    0.000    0.000    0.000 {method 'read' of '_io.TextIOWrapper' objects}
+      106    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\game_object.py:217(get_component)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:58(__init__)
+       14    0.000    0.000    0.000    0.000 {built-in method _thread.allocate_lock}
+        2    0.000    0.000    0.000    0.000 {method 'close' of '_io.BufferedReader' objects}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1400(_fill_cache)
+      102    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\space.py:133(<listcomp>)
+       11    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\pathlib.py:685(__fspath__)
+        2    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\zipfile.py:186(_EndRecData64)
+      146    0.000    0.000    0.000    0.000 {built-in method builtins.all}
+      168    0.000    0.000    0.000    0.000 {method 'read' of '_io.BytesIO' objects}
+       42    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\zipfile.py:693(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1441(path_hook_for_FileFinder)
+        1    0.000    0.000    0.000    0.000 <string>:6(<module>)
+       10    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\enum.py:69(__setitem__)
+       86    0.000    0.000    0.000    0.000 {built-in method nt.fspath}
+       72    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\pathlib.py:990(_init)
+        1    0.000    0.000    0.000    0.000 <string>:23(init)
+      119    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\opcode.py:39(def_op)
+       42    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\zipfile.py:1368(getinfo)
+       64    0.000    0.000    0.000    0.000 {method 'pop' of 'list' objects}
+       10    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\game_object.py:316(collision_enter)
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\inspect.py:2388(_ParameterKind)
+       16    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\game_object.py:23(__init__)
+      106    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\vector2d.py:83(nullify)
+       13    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\pathlib.py:675(__str__)
+        1    0.000    0.000    0.000    0.000 <string>:3(<module>)
+       44    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\pathlib.py:880(__truediv__)
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\json\__init__.py:303(loads)
+        2    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\zipfile.py:1242(__exit__)
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\pathlib.py:669(_make_child)
+        2    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\json\encoder.py:204(iterencode)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:98(_path_isdir)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:572(spec_from_file_location)
+       42    0.000    0.000    0.000    0.000 {function ZipExtFile.close at 0x0000023A68D1D2F0}
+      126    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\zipfile.py:1458(<lambda>)
+       52    0.000    0.000    0.000    0.000 {built-in method builtins.min}
+       88    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
+        4    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\zipfile.py:1769(close)
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\json\decoder.py:335(decode)
+       10    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\game_object.py:195(is_walkable)
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\enum.py:124(__prepare__)
+       33    0.000    0.000    0.000    0.000 main.py:93(<listcomp>)
+        2    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\threading.py:499(__init__)
+       61    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:222(_verbose_message)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:719(find_spec)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:78(acquire)
+        2    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\abc.py:137(__instancecheck__)
+       52    0.000    0.000    0.000    0.000 {built-in method builtins.setattr}
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:436(_classify_pyc)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:318(__exit__)
+        2    0.000    0.000    0.000    0.000 {built-in method _abc._abc_instancecheck}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:740(create_module)
+       10    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\enum.py:367(__setattr__)
+       42    0.000    0.000    0.000    0.000 {method 'find' of 'str' objects}
+        4    0.000    0.000    0.000    0.000 <string>:57(collision_enter)
+        4    0.000    0.000    0.000    0.000 <string>:12(__init__)
+       19    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\json\encoder.py:277(_iterencode_list)
+        1    0.000    0.000    0.000    0.000 <string>:7(<module>)
+       97    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\space.py:142(<listcomp>)
+       62    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+        8    0.000    0.000    0.000    0.000 {method 'rsplit' of 'str' objects}
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:151(__exit__)
+      120    0.000    0.000    0.000    0.000 {method 'rstrip' of 'str' objects}
+       72    0.000    0.000    0.000    0.000 {method 'reverse' of 'list' objects}
+       88    0.000    0.000    0.000    0.000 <string>:76(endframe)
+       42    0.000    0.000    0.000    0.000 {method 'seekable' of '_io.BufferedReader' objects}
+       10    0.000    0.000    0.000    0.000 main.py:45(<listcomp>)
+        9    0.000    0.000    0.000    0.000 {built-in method builtins.repr}
+        1    0.000    0.000    0.000    0.000 {built-in method _imp.create_builtin}
+        8    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\color_sys.py:23(get_color)
+        4    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\codecs.py:319(decode)
+       13    0.000    0.000    0.000    0.000 {method 'expandtabs' of 'str' objects}
+        4    0.000    0.000    0.000    0.000 <string>:61(defer_vanish)
+        2    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\enum.py:433(_get_mixins_)
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:51(_r_long)
+       89    0.000    0.000    0.000    0.000 <string>:35(update)
+       54    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\collections\__init__.py:388(<genexpr>)
+        2    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\threading.py:216(__init__)
+       71    0.000    0.000    0.000    0.000 {method 'add' of 'set' objects}
+        8    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\vector2d.py:38(copy)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:103(release)
+       87    0.000    0.000    0.000    0.000 <string>:32(handle_events)
+       13    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:859(__exit__)
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\_collections_abc.py:657(get)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:469(_validate_timestamp_pyc)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:399(_check_name_wrapper)
+        4    0.000    0.000    0.000    0.000 <string>:9(__init__)
+        4    0.000    0.000    0.000    0.000 <string>:82(text_changed)
+        4    0.000    0.000    0.000    0.000 {built-in method _imp._fix_co_filename}
+        4    0.000    0.000    0.000    0.000 {built-in method _imp.is_builtin}
+        4    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\game_object.py:150(<listcomp>)
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\collections\abc.py:1(<module>)
+       13    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:855(__enter__)
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\enum.py:478(_find_new_)
+        9    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\enum.py:176(<setcomp>)
+       16    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\game_object.py:69(attach)
+       42    0.000    0.000    0.000    0.000 {built-in method builtins.chr}
+       29    0.000    0.000    0.000    0.000 {method 'rpartition' of 'str' objects}
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:882(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1315(__init__)
+        6    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\pathlib.py:658(_format_parsed_parts)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:35(_new_module)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:311(__enter__)
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\os.py:673(__getitem__)
+       12    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\opcode.py:43(name_op)
+       54    0.000    0.000    0.000    0.000 {method '__contains__' of 'frozenset' objects}
+       10    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\enum.py:26(_is_dunder)
+        1    0.000    0.000    0.000    0.000 {built-in method _curses.setupterm}
+       39    0.000    0.000    0.000    0.000 {method 'lstrip' of 'str' objects}
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:369(__init__)
+        2    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\json\encoder.py:259(_make_iterencode)
+        2    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:176(cb)
+        4    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\state_system.py:153(defer)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:416(parent)
+       10    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:36(_relax_case)
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\json\decoder.py:346(raw_decode)
+       10    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\game_object.py:196(<listcomp>)
+       36    0.000    0.000    0.000    0.000 {method 'strip' of 'str' objects}
+        3    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\state_system.py:95(_push_state)
+       23    0.000    0.000    0.000    0.000 {built-in method _imp.release_lock}
+       54    0.000    0.000    0.000    0.000 {method 'isidentifier' of 'str' objects}
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:307(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:433(spec_from_loader)
+        4    0.000    0.000    0.000    0.000 {method 'bkgd' of '_curses.window' objects}
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:792(find_spec)
+        7    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\opcode.py:47(jrel_op)
+        2    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\threading.py:243(__exit__)
+        1    0.000    0.000    0.000    0.000 <string>:93(<lambda>)
+       10    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\enum.py:34(_is_sunder)
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\abc.py:141(__subclasscheck__)
+        4    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\game_object.py:151(<listcomp>)
+        2    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\codecs.py:309(__init__)
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\inspect.py:2406(Parameter)
+        2    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\threading.py:240(__enter__)
+        2    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\threading.py:75(RLock)
+        2    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\threading.py:728(_newname)
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\os.py:743(encodekey)
+        2    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\threading.py:252(_acquire_restore)
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\inspect.py:2690(Signature)
+       23    0.000    0.000    0.000    0.000 {built-in method _imp.acquire_lock}
+        2    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\json\encoder.py:104(__init__)
+        1    0.000    0.000    0.000    0.000 <string>:6(MonoEngine)
+        4    0.000    0.000    0.000    0.000 {built-in method _codecs.utf_8_decode}
+        2    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\_weakrefset.py:81(add)
+        2    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\threading.py:1206(current_thread)
+        2    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\codecs.py:186(__init__)
+        1    0.000    0.000    0.000    0.000 <string>:6(TextDisplay)
+        5    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\enum.py:18(_is_descriptor)
+        1    0.000    0.000    0.000    0.000 <string>:14(__init__)
+        6    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\opcode.py:51(jabs_op)
+        1    0.000    0.000    0.000    0.000 <string>:9(init)
+        4    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\game_object.py:243(exists)
+       12    0.000    0.000    0.000    0.000 {built-in method from_bytes}
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\pathlib.py:648(_from_parsed_parts)
+        9    0.000    0.000    0.000    0.000 {built-in method sys._getframe}
+        3    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\json\encoder.py:223(floatstr)
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\enum.py:63(__init__)
+        1    0.000    0.000    0.000    0.000 {built-in method _abc._abc_subclasscheck}
+        3    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\state_system.py:13(__init__)
+        3    0.000    0.000    0.000    0.000 {method 'extend' of 'list' objects}
+        2    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\threading.py:255(_is_owned)
+       12    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+        4    0.000    0.000    0.000    0.000 {built-in method _imp.is_frozen}
+        4    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\state_system.py:52(defer)
+        1    0.000    0.000    0.000    0.000 <string>:12(LoadGameMenu)
+        4    0.000    0.000    0.000    0.000 {method 'attrset' of '_curses.window' objects}
+        1    0.000    0.000    0.000    0.000 <string>:12(NewGameMenu)
+       20    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:321(<genexpr>)
+        4    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\game_object.py:153(<listcomp>)
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\inspect.py:2560(BoundArguments)
+        1    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\state_system.py:67(__init__)
+        1    0.000    0.000    0.000    0.000 <string>:6(Sprite)
+       14    0.000    0.000    0.000    0.000 {built-in method builtins.issubclass}
+        2    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\zipfile.py:1765(__del__)
+       28    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\game_object.py:92(collision_enter)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:143(__init__)
+        4    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\game_object.py:154(<listcomp>)
+        2    0.000    0.000    0.000    0.000 {method '__enter__' of '_thread.lock' objects}
+       10    0.000    0.000    0.000    0.000 {method 'get' of 'mappingproxy' objects}
+        4    0.000    0.000    0.000    0.000 {method 'nodelay' of '_curses.window' objects}
+        2    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\threading.py:249(_release_save)
+        8    0.000    0.000    0.000    0.000 {built-in method _curses.color_pair}
+        1    0.000    0.000    0.000    0.000 <string>:12(MainGame)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:907(get_filename)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:748(exec_module)
+        2    0.000    0.000    0.000    0.000 {method 'keypad' of '_curses.window' objects}
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\enum.py:326(__getattr__)
+        1    0.000    0.000    0.000    0.000 <string>:10(Alert)
+        1    0.000    0.000    0.000    0.000 <string>:9(BlitFactory)
+        2    0.000    0.000    0.000    0.000 {method 'end' of 're.Match' objects}
+        1    0.000    0.000    0.000    0.000 <string>:6(APRefill)
+        1    0.000    0.000    0.000    0.000 {built-in method _curses.noecho}
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\os.py:1076(__subclasshook__)
+        1    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\ui.py:71(__init__)
+        1    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\color_sys.py:19(__init__)
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\dis.py:461(Bytecode)
+        1    0.000    0.000    0.000    0.000 <string>:11(MainMenu)
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.locals}
+        2    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\codecs.py:260(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:232(_requires_builtin_wrapper)
+        2    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\threading.py:1096(daemon)
+        2    0.000    0.000    0.000    0.000 {method 'border' of '_curses.window' objects}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1429(<setcomp>)
+        9    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1321(<genexpr>)
+        1    0.000    0.000    0.000    0.000 <string>:6(Legs)
+        1    0.000    0.000    0.000    0.000 {built-in method _curses.cbreak}
+        1    0.000    0.000    0.000    0.000 <string>:11(Loading)
+        1    0.000    0.000    0.000    0.000 {method 'fileno' of '_io.TextIOWrapper' objects}
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\enum.py:151(<dictcomp>)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:424(has_location)
+        6    0.000    0.000    0.000    0.000 {built-in method builtins.ord}
+        1    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\ui.py:11(__init__)
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\os.py:737(check_str)
+        2    0.000    0.000    0.000    0.000 {method 'format' of 'str' objects}
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:717(create_module)
+        1    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\ui.py:44(add_widget)
+        2    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\zipfile.py:640(_check_compression)
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\pathlib.py:88(join_parsed_parts)
+        1    0.000    0.000    0.000    0.000 C:\Users\maxim\Desktop\empty\kernel\state_system.py:114(quit)
+        2    0.000    0.000    0.000    0.000 {method '__exit__' of '_thread.lock' objects}
+        3    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\enum.py:195(<genexpr>)
+        1    0.000    0.000    0.000    0.000 <string>:6(MainStateManager)
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\dis.py:199(Instruction)
+        2    0.000    0.000    0.000    0.000 {method 'append' of 'collections.deque' objects}
+        5    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 <string>:1(<module>)
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\inspect.py:880(BlockFinder)
+        3    0.000    0.000    0.000    0.000 {method 'partition' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\inspect.py:2380(_void)
+        2    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method _curses.echo}
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\inspect.py:2384(_empty)
+        1    0.000    0.000    0.000    0.000 <string>:6(Bloc)
+        5    0.000    0.000    0.000    0.000 {method 'items' of 'collections.OrderedDict' objects}
+        2    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\threading.py:507(is_set)
+        2    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\zipfile.py:1341(infolist)
+        1    0.000    0.000    0.000    0.000 main.py:185(<listcomp>)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        2    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\zipfile.py:1239(__enter__)
+        1    0.000    0.000    0.000    0.000 <string>:13(cleanup)
+        2    0.000    0.000    0.000    0.000 {method 'release' of '_thread.lock' objects}
+        1    0.000    0.000    0.000    0.000 {method 'setdefault' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 {method 'mro' of 'type' objects}
+        1    0.000    0.000    0.000    0.000 {method 'upper' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 C:\Program Files\Python37\lib\inspect.py:878(EndOfBlock)
+        1    0.000    0.000    0.000    0.000 {built-in method _imp.exec_builtin}
+        1    0.000    0.000    0.000    0.000 {built-in method _curses.nocbreak}
+        2    0.000    0.000    0.000    0.000 <string>:52(pause)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:765(is_package)
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.globals}
+
+

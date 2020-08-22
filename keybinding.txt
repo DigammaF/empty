@@ -1,0 +1,10 @@
+kuit game:k
+move up:z
+move down:s
+move right:d
+move left:q
+blit up:8
+blit down:2
+blit right:6
+blit left:4
+components menu:m

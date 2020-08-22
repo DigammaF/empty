@@ -1,0 +1,107 @@
+"""
+
+"""
+
+import curses
+
+from kernel import State, Data, ColorSys
+
+
+class Alert(State):
+
+
+	def __init__(self, state_manager, window, text, choices):
+
+		State.__init__(self, state_manager, window)
+
+		self.text = text
+		self.choices = choices # [(text, callback)]
+		self.ptr = 0
+
+	def init(self):
+
+		self.resume()
+
+	def cleanup(self):
+		pass
+
+	def handle_events(self):
+
+		try:
+
+			char = self.window.getkey()
+
+		except curses.error:  # no key pressed
+			return
+
+		if char == "KEY_DOWN":
+			self.ptr = min(self.ptr + 1, len(self.choices) - 1)
+
+		if char == "KEY_UP":
+			self.ptr = max(self.ptr - 1, 0)
+
+		if char == "\n":
+
+			self.state_manager.pop_state()
+
+			if self.choices:
+				self.choices[self.ptr][1]()
+
+	def update(self, dt):
+		pass
+
+	def draw(self):
+
+		self.window.clear()
+		my, mx = self.window.getmaxyx()
+
+		y = 1
+
+		for line in self.text.split("\n"):
+
+			self.window.addstr(y, (mx - len(line))//2, line)
+			y += 1
+
+		y = my - 3 - len(self.choices)
+		x = 3
+		i = 0
+
+		for txt, _ in self.choices:
+
+			self.window.addstr(y, x, txt)
+
+			if self.ptr == i:
+				self.window.addstr(y, x - 1, "*")
+
+			y += 1
+			i += 1
+
+		self.window.refresh()
+
+	def pause(self):
+		pass
+
+	def resume(self):
+
+		curses.curs_set(False)
+		self.window.nodelay(True)
+
+		self.window.bkgd(" ", self.state_manager.color_sys.get_color(
+			ColorSys.WHITE,
+			ColorSys.BLACK,
+		))
+
+		self.window.attrset(self.state_manager.color_sys.get_color(
+			ColorSys.WHITE,
+			ColorSys.BLACK,
+		))
+
+		my, mx = self.window.getmaxyx()
+
+		self.window.refresh()
+
+	def endframe(self):
+		pass
+
+
+Data.exported = Alert

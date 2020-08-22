@@ -35,7 +35,13 @@ class MainMenu(State):
 			self.state_manager.quit()
 
 		if char == "n":
-			self.state_manager.push_state(self.window, Data.states["game"]["main_game"])
+			self.state_manager.push_state(self.window, Data.states["game"]["new_game_menu"])
+
+		if char == "l":
+			self.state_manager.push_state(self.window, Data.states["game"]["load_game_menu"])
+
+		if char == "a":
+			self.state_manager.push_state(self.window, Data.states["game"]["alert"], text="Choose something", choices=[("One", lambda :print("One")), ("Two", lambda :print("Two")), ("Three", lambda :print("Three"))])
 
 	def update(self, dt):
 		pass
@@ -60,6 +66,8 @@ class MainMenu(State):
 			ColorSys.WHITE,
 			ColorSys.BLACK,
 		))
+
+		self.window.clear()
 
 		my, mx = self.window.getmaxyx()
 

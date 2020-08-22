@@ -1,0 +1,111 @@
+"""
+	REQ loading.state
+"""
+
+import curses
+import os
+import threading
+
+from kernel import State, Data, ColorSys, UISystem, TextInput
+
+
+class NewGameMenu(State):
+
+
+	def init(self):
+
+		self.ui_system = UISystem(self)
+
+		self.display_save_already_exist = False
+		self.save_names = set(os.listdir(Data.save_dir))
+		self.save_already_exists_txt = "This save already exists and will be overwritten"
+
+		self.loading_state = None
+
+		self.resume()
+
+	def cleanup(self):
+		pass
+
+	def handle_events(self):
+
+		self.ui_system.handle_events()
+
+		if self.ui_system.catch_events: return
+
+	def update(self, dt):
+
+		self.ui_system.update(dt)
+
+	def draw(self):
+
+		self.window.clear()
+
+		my, mx = self.window.getmaxyx()
+
+		self.window.addstr(my//6, mx//5, "Enter save name")
+		self.ui_system.draw()
+
+		if self.display_save_already_exist:
+			self.window.addstr(my - 3, (mx - len(self.save_already_exists_txt))//2, self.save_already_exists_txt)
+
+		self.window.refresh()
+
+	def pause(self):
+		pass
+
+	def resume(self):
+
+		curses.curs_set(False)
+		self.window.nodelay(True)
+
+		self.window.bkgd(" ", self.state_manager.color_sys.get_color(
+			ColorSys.WHITE,
+			ColorSys.BLACK,
+		))
+
+		self.window.attrset(self.state_manager.color_sys.get_color(
+			ColorSys.WHITE,
+			ColorSys.BLACK,
+		))
+
+		my, mx = self.window.getmaxyx()
+
+		widget = TextInput(mx//4, my//2, self.set_save_name, change_callback=self.text_changed)
+		self.ui_system.add_widget(widget)
+
+		self.window.refresh()
+
+	def endframe(self):
+		pass
+
+	def text_changed(self, txt):
+
+		if not txt.endswith(".save"):
+			txt += ".save"
+
+		self.display_save_already_exist = txt in self.save_names
+
+	def set_save_name(self, txt):
+
+		if txt:
+
+			if not txt.endswith(".save"):
+				txt += ".save"
+
+			Data.save_name = txt
+
+			self.state_manager.pop_state()  # The current state became useless, we do not want it to stay on the stack
+			self.loading_state = self.state_manager.push_state(self.window, Data.states["game"]["loading"], "Loading game space ...")
+
+			threading.Thread(target=self.assign_space).start()
+
+	def assign_space(self):
+
+		space = Data.spaces["game"]["stresstest"](self.state_manager, progress_callback=self.loading_state.progress_callback)
+
+		self.state_manager.pop_state()  # pop loading state
+		self.state_manager.push_state(self.window, Data.states["game"]["main_game"], space)
+
+
+Data.exported = NewGameMenu

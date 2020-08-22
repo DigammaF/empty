@@ -1,0 +1,3 @@
+echo Resetting config ...
+del config.txt
+del keybinding.txt
