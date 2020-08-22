@@ -10,18 +10,18 @@ def get_debug_space(state_manager):
 
 	space = Space.new()
 
-	space.add_game_object(Data.game_objects["pawn"](
+	space.add_game_object(Data.game_objects["game"]["pawn"](
 		state_manager,
 		V(0, 0),
 		"T",
 		ColorSys.BLUE,
-		Data.components["blit_factory"](cost=1, damage=1/3, travel_cost=0.05, ttl=4),
+		Data.components["game"]["blit_factory"](cost=1, damage=1/3, travel_cost=0.05, ttl=4),
 	), "player")
 
 	for p in (V(-1, -1), V(-1, 1), V(1, 1), V(1, -1)):
-		space.add_game_object(Data.game_objects["block"](state_manager, p))
+		space.add_game_object(Data.game_objects["game"]["block"](state_manager, p))
 
-	space.add_game_object(Data.game_objects["block"](state_manager, V(2, 2)))
+	space.add_game_object(Data.game_objects["game"]["block"](state_manager, V(2, 2)))
 
 	return space
 

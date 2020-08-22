@@ -19,7 +19,7 @@ class BlitFactory(Component):
 		self.ttl = ttl
 
 	def new_blit(self, position, direction):
-		return Data.game_objects["blit"](
+		return Data.game_objects["game"]["blit"](
 			state_manager=self.state_manager,
 			owner=self.game_object,
 			position=position,

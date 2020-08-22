@@ -5,7 +5,7 @@
 
 import curses
 
-from kernel import State, V, ColorSys, Data
+from kernel import State, V, ColorSys, Data, Config
 
 
 class MainGame(State):
@@ -13,7 +13,7 @@ class MainGame(State):
 
 	def init(self):
 
-		self.space = Data.spaces["debug"](self.state_manager)
+		self.space = Data.spaces["game"]["debug"](self.state_manager)
 		self.dt_hist = []
 		self.dt_hist_size = 300
 
@@ -35,39 +35,39 @@ class MainGame(State):
 			my, mx = self.window.getmaxyx()
 			return
 
-		if char == "k":
+		if char == Config.instance.keybinding["kuit game"]:
 			self.state_manager.quit()
 			return
 
-		if char == "z":
+		if char == Config.instance.keybinding["move up"]:
 			self.space.get_obj("player").velocity.set(V(0, 1))
 			return
 
-		if char == "s":
+		if char == Config.instance.keybinding["move down"]:
 			self.space.get_obj("player").velocity.set(V(0, -1))
 			return
 
-		if char == "q":
+		if char == Config.instance.keybinding["move left"]:
 			self.space.get_obj("player").velocity.set(V(1, 0))
 			return
 
-		if char == "d":
+		if char == Config.instance.keybinding["move right"]:
 			self.space.get_obj("player").velocity.set(V(-1, 0))
 			return
 
-		if char == "8":
+		if char == Config.instance.keybinding["blit up"]:
 			self.space.get_obj("player").blit_com.set(V(0, 1))
 			return
 
-		if char == "2":
+		if char == Config.instance.keybinding["blit down"]:
 			self.space.get_obj("player").blit_com.set(V(0, -1))
 			return
 
-		if char == "4":
+		if char == Config.instance.keybinding["blit left"]:
 			self.space.get_obj("player").blit_com.set(V(1, 0))
 			return
 
-		if char == "6":
+		if char == Config.instance.keybinding["blit right"]:
 			self.space.get_obj("player").blit_com.set(V(-1, 0))
 			return
 

@@ -27,13 +27,15 @@ class MainMenu(State):
 		except curses.error: # no key pressed
 			return
 
-		print(f": ({ord(char)}) {char}")
+		o = (ord(char) if len(char) == 1 else "x")
+
+		print(f": ({o}) {char}")
 
 		if char == "q":
 			self.state_manager.quit()
 
 		if char == "n":
-			self.state_manager.push_state(self.window, Data.states["main_game"])
+			self.state_manager.push_state(self.window, Data.states["game"]["main_game"])
 
 	def update(self, dt):
 		pass
@@ -66,23 +68,20 @@ class MainMenu(State):
 
 		y, x = int(my * 0.3) + 2, int(mx * 0.32)
 
-		self.window.addstr(y + 2, x, "Nouveau")
+		self.window.addstr(y + 2, x, "New game")
 		self.window.addstr(y + 2, x, "N", curses.A_BOLD | curses.A_UNDERLINE)
 
-		self.window.addstr(y + 3, x, "Charger")
-		self.window.addstr(y + 3, x, "C", curses.A_BOLD | curses.A_UNDERLINE)
+		self.window.addstr(y + 3, x, "Load")
+		self.window.addstr(y + 3, x, "L", curses.A_BOLD | curses.A_UNDERLINE)
 
-		self.window.addstr(y + 5, x, "Options")
-		self.window.addstr(y + 5, x, "O", curses.A_BOLD | curses.A_UNDERLINE)
+		self.window.addstr(y + 5, x, "Settings")
+		self.window.addstr(y + 5, x, "S", curses.A_BOLD | curses.A_UNDERLINE)
+		
+		self.window.addstr(y + 6, x, "Packs")
+		self.window.addstr(y + 6, x, "P", curses.A_BOLD | curses.A_UNDERLINE)
 
-		self.window.addstr(y + 6, x, "Aide")
-		self.window.addstr(y + 6, x, "A", curses.A_BOLD | curses.A_UNDERLINE)
-
-		self.window.addstr(y + 8, x, "Crédits")
-		self.window.addstr(y + 8, x + 1, "r", curses.A_BOLD | curses.A_UNDERLINE)
-
-		self.window.addstr(y + 9, x, "Quitter")
-		self.window.addstr(y + 9, x, "Q", curses.A_BOLD | curses.A_UNDERLINE)
+		self.window.addstr(y + 8, x, "Quit")
+		self.window.addstr(y + 8, x, "Q", curses.A_BOLD | curses.A_UNDERLINE)
 
 		self.window.addstr(my - 1, int(mx*0.85), "v0.1")
 

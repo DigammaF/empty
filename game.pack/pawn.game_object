@@ -12,11 +12,11 @@ def new_pawn(state_manager, position, char, color, blit_factory_component=None, 
 		components = {}
 
 	obj_components = {
-		"aprefill": Data.components["aprefill"](1),
-		"sprite": Data.components["sprite"](char, color),
-		"name_display": Data.components["text_display"](-1),
-		"dialog_display": Data.components["text_display"](1),
-		GameObject.LEGS: Data.components["legs"](0.1),
+		"aprefill": Data.components["game"]["aprefill"](1),
+		"sprite": Data.components["game"]["sprite"](char, color),
+		"name_display": Data.components["game"]["text_display"](-1),
+		"dialog_display": Data.components["game"]["text_display"](1),
+		GameObject.LEGS: Data.components["game"]["legs"](0.1),
 		**components,
 	}
 

@@ -17,12 +17,12 @@ def new_blit(state_manager, owner, position, direction, damage, ttl, travel_cost
 		state_manager=state_manager,
 		position=position,
 		components={
-			"mono_engine": Data.components["mono_engine"](
+			"mono_engine": Data.components["game"]["mono_engine"](
 				direction=direction, owner=owner, damage=damage, ttl=ttl
 			),
-			"sprite": Data.components["sprite"]("o", ColorSys.RED),
-			"aprefill": Data.components["aprefill"](1),
-			GameObject.LEGS: Data.components["legs"](travel_cost),
+			"sprite": Data.components["game"]["sprite"]("o", ColorSys.RED),
+			"aprefill": Data.components["game"]["aprefill"](1),
+			GameObject.LEGS: Data.components["game"]["legs"](travel_cost),
 			**components,
 		}
 	)

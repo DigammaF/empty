@@ -1,6 +1,6 @@
 
 
-from kernel import Component
+from kernel import Component, Data
 
 
 class Bloc(Component):

@@ -16,8 +16,8 @@ def new_block(state_manager, position, components=None):
 		state_manager=state_manager,
 		position=position,
 		components={
-			"bloc": Data.components["bloc"](),
-			"sprite": Data.components["sprite"]("#", ColorSys.YELLOW),
+			"bloc": Data.components["game"]["bloc"](),
+			"sprite": Data.components["game"]["sprite"]("#", ColorSys.YELLOW),
 			**components,
 		},
 		static=True,
