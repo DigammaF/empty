@@ -2,7 +2,7 @@
 
 """
 
-import curses, os
+import curses, os, threading
 
 from pathlib import Path
 
@@ -105,6 +105,15 @@ and restart the game.
 			with open(Data.save_dir/Data.save_name, "rb") as src:
 				with open(Data.save_dir/(Path(Data.save_name).stem + ".backup.save"), "wb") as dst:
 					dst.write(src.read())
+
+		self.state_manager.pop_state() # remove the current state
+		self.loading_state = self.state_manager.push_state(self.window, Data.states["game"]["loading"],
+														   "Loading save ...")
+		threading.Thread(target=self.load_space_and_start).start()
+
+	def load_space_and_start(self):
+
+		self.state_manager.pop_state() # remove the loading state
 
 		saved = self.content["saved"]
 		space = Space.load(saved["space"], self.state_manager)

@@ -3,11 +3,10 @@ Traceback (most recent call last):
     curses.wrapper(main)
   File "C:\Program Files\Python37\lib\curses\__init__.py", line 98, in wrapper
     return func(stdscr, *args, **kwds)
-  File "main.py", line 229, in main
-    main_state_manager.draw()
-  File "C:\Users\maxim\Desktop\empty\kernel\state_system.py", line 124, in draw
-    self.current_state.draw()
-  File "<string>", line 119, in draw
-  File "C:\Users\maxim\Desktop\empty\kernel\space.py", line 265, in draw
-    game_object.draw(window, reference, obj_rel_pos)
-TypeError: draw() takes 3 positional arguments but 4 were given
+  File "main.py", line 222, in main
+    main_state_manager.handle_events()
+  File "C:\Users\maxim\Desktop\empty\kernel\state_system.py", line 118, in handle_events
+    self.current_state.handle_events()
+  File "<string>", line 78, in handle_events
+  File "<string>", line 113, in choice_load_anyway
+NameError: name 'Thread' is not defined

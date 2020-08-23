@@ -15,7 +15,7 @@ from kernel import *
 DEV = "dev"
 PRODUCTION = "production"
 
-VERSION = DEV
+VERSION = PRODUCTION
 
 CRASH_REPORT_FILENAME = "crash_report.txt"
 

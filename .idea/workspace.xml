@@ -2,34 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d1ef29f-7308-4d97-8193-6e48fe940e19" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.pack/alert.state" beforeDir="false" afterPath="$PROJECT_DIR$/game.pack/alert.state" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.pack/aprefill.component" beforeDir="false" afterPath="$PROJECT_DIR$/game.pack/aprefill.component" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.pack/blit.game_object" beforeDir="false" afterPath="$PROJECT_DIR$/game.pack/blit.game_object" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.pack/blit_factory.component" beforeDir="false" afterPath="$PROJECT_DIR$/game.pack/blit_factory.component" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.pack/debug.space" beforeDir="false" afterPath="$PROJECT_DIR$/game.pack/debug.space" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.pack/legs.component" beforeDir="false" afterPath="$PROJECT_DIR$/game.pack/legs.component" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.txt" beforeDir="false" afterPath="$PROJECT_DIR$/config.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crash_report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/crash_report.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game.pack/load_game_menu.state" beforeDir="false" afterPath="$PROJECT_DIR$/game.pack/load_game_menu.state" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.pack/loading.state" beforeDir="false" afterPath="$PROJECT_DIR$/game.pack/loading.state" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.pack/main_game.state" beforeDir="false" afterPath="$PROJECT_DIR$/game.pack/main_game.state" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.pack/main_menu.state" beforeDir="false" afterPath="$PROJECT_DIR$/game.pack/main_menu.state" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.pack/mono_engine.component" beforeDir="false" afterPath="$PROJECT_DIR$/game.pack/mono_engine.component" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.pack/new_game_menu.state" beforeDir="false" afterPath="$PROJECT_DIR$/game.pack/new_game_menu.state" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.pack/sprite.component" beforeDir="false" afterPath="$PROJECT_DIR$/game.pack/sprite.component" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.pack/stresstest.space" beforeDir="false" afterPath="$PROJECT_DIR$/game.pack/stresstest.space" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.pack/text_display.component" beforeDir="false" afterPath="$PROJECT_DIR$/game.pack/text_display.component" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/ai_engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/ai_engine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.zip" beforeDir="false" afterPath="$PROJECT_DIR$/game.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kernel/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/game_object.py" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/game_object.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/quadtree.py" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/quadtree.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/space.py" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/space.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/state_system.py" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/state_system.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/ui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/vector2d.py" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/vector2d.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saves/test.save" beforeDir="false" afterPath="$PROJECT_DIR$/saves/test.save" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+            <state relative-caret-position="216">
+              <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
               <folding>
                 <element signature="e#2#60#0" expanded="true" />
               </folding>
@@ -55,8 +35,8 @@
       <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kernel/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="53" column="33" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
+            <state relative-caret-position="189">
+              <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
               <folding>
                 <element signature="e#2#36#0" expanded="true" />
               </folding>
@@ -67,7 +47,7 @@
       <file leaf-file-name="space.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kernel/space.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state relative-caret-position="4239">
               <caret line="248" column="80" selection-start-line="248" selection-start-column="80" selection-end-line="248" selection-end-column="80" />
               <folding>
                 <element signature="e#2#15#0" expanded="true" />
@@ -76,50 +56,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game_object.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kernel/game_object.py">
+      <file leaf-file-name="new_game_menu.state" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/game.pack/new_game_menu.state">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3969">
-              <caret line="214" column="63" selection-start-line="214" selection-start-column="63" selection-end-line="214" selection-end-column="63" />
+            <state relative-caret-position="257">
+              <caret line="98" column="34" lean-forward="true" selection-start-line="98" selection-start-column="34" selection-end-line="98" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="text_display.component" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/game.pack/text_display.component">
+      <file leaf-file-name="load_game_menu.state" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/game.pack/load_game_menu.state">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="69" column="65" selection-start-line="69" selection-start-column="65" selection-end-line="69" selection-end-column="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="quadtree.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kernel/quadtree.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="68" column="32" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main_game.state" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/game.pack/main_game.state">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="107" column="31" selection-start-line="107" selection-start-column="31" selection-end-line="107" selection-end-column="31" />
+            <state relative-caret-position="278">
+              <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
               <folding>
-                <element signature="e#72#85#0" expanded="true" />
+                <element signature="e#10#38#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sprite.component" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/game.pack/sprite.component">
+      <file leaf-file-name="alert.state" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/game.pack/alert.state">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
+            <state relative-caret-position="1175">
+              <caret line="74" selection-start-line="74" selection-end-line="74" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loading.state" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/game.pack/loading.state">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-738">
+              <caret line="45" column="72" selection-start-line="45" selection-start-column="72" selection-end-line="45" selection-end-column="72" />
+              <folding>
+                <element signature="e#10#23#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -200,19 +174,19 @@
         <option value="$PROJECT_DIR$/game.pack/debug.space" />
         <option value="$PROJECT_DIR$/game.pack/new_game_menu.state" />
         <option value="$PROJECT_DIR$/game.pack/loading.state" />
-        <option value="$PROJECT_DIR$/game.pack/load_game_menu.state" />
         <option value="$PROJECT_DIR$/game_space_maker/main.py" />
         <option value="$PROJECT_DIR$/kernel/__init__.py" />
         <option value="$PROJECT_DIR$/game.pack/stresstest.space" />
         <option value="$PROJECT_DIR$/kernel/vector2d.py" />
         <option value="$PROJECT_DIR$/game.pack/main_game.state" />
-        <option value="$PROJECT_DIR$/kernel/config.py" />
         <option value="$PROJECT_DIR$/game.pack/sprite.component" />
         <option value="$PROJECT_DIR$/game.pack/text_display.component" />
         <option value="$PROJECT_DIR$/kernel/game_object.py" />
         <option value="$PROJECT_DIR$/kernel/space.py" />
         <option value="$PROJECT_DIR$/kernel/quadtree.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/kernel/config.py" />
+        <option value="$PROJECT_DIR$/game.pack/load_game_menu.state" />
       </list>
     </option>
   </component>
@@ -303,18 +277,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13616072" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32838285" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -327,22 +300,22 @@
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13616072" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32838285" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32838285" />
-      <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32838285" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32838285" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -354,10 +327,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/kernel/color_sys.py">
+    <entry file="file://$PROJECT_DIR$/kernel/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="837">
-          <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+        <state relative-caret-position="675">
+          <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+          <folding>
+            <element signature="e#2#36#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -542,13 +518,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/game.pack/alert.state">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1944">
-          <caret line="74" selection-start-line="74" selection-end-line="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/game.pack/main.space">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
@@ -570,36 +539,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/game.pack/loading.state">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="45" column="72" selection-start-line="45" selection-start-column="72" selection-end-line="45" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kernel/ai_engine.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-846">
           <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/game.pack/load_game_menu.state">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="53" column="54" selection-start-line="53" selection-start-column="54" selection-end-line="53" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/game.pack/new_game_menu.state">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2488">
-          <caret line="99" selection-start-line="99" selection-end-line="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/game_space_maker/main.raw_space">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/game_space_maker/main.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -619,9 +564,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="47" column="77" selection-start-line="47" selection-start-column="77" selection-end-line="47" selection-end-column="77" />
-          <folding>
-            <element signature="e#74#87#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -629,9 +571,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="144" column="24" selection-start-line="144" selection-start-column="24" selection-end-line="144" selection-end-column="24" />
-          <folding>
-            <element signature="e#1#35#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -639,19 +578,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="107" column="31" selection-start-line="107" selection-start-column="31" selection-end-line="107" selection-end-column="31" />
-          <folding>
-            <element signature="e#72#85#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kernel/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="53" column="33" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
-          <folding>
-            <element signature="e#2#36#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -676,16 +602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kernel/space.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="248" column="80" selection-start-line="248" selection-start-column="80" selection-end-line="248" selection-end-column="80" />
-          <folding>
-            <element signature="e#2#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kernel/quadtree.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -693,12 +609,73 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        <state relative-caret-position="216">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
           <folding>
             <element signature="e#2#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kernel/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+          <folding>
+            <element signature="e#2#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game.pack/loading.state">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-738">
+          <caret line="45" column="72" selection-start-line="45" selection-start-column="72" selection-end-line="45" selection-end-column="72" />
+          <folding>
+            <element signature="e#10#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kernel/space.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4239">
+          <caret line="248" column="80" selection-start-line="248" selection-start-column="80" selection-end-line="248" selection-end-column="80" />
+          <folding>
+            <element signature="e#2#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game.pack/alert.state">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1175">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game.pack/new_game_menu.state">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="98" column="34" lean-forward="true" selection-start-line="98" selection-start-column="34" selection-end-line="98" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game.pack/load_game_menu.state">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
+          <folding>
+            <element signature="e#10#38#0" expanded="true" />
           </folding>
         </state>
       </provider>

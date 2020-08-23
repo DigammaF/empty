@@ -1,10 +1,11 @@
 {
     "term_size": [
-        49,
-        25
+        73,
+        24
     ],
     "packs": [
         "game"
     ],
-    "custom": {}
+    "custom": {},
+    "colors": false
 }

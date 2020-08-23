@@ -23,6 +23,7 @@ class ConfigSession:
 				packs=saved["packs"],
 				custom=saved["custom"],
 				keybinding=None,
+				colors=saved["colors"],
 			)
 
 		else:
@@ -36,6 +37,7 @@ class ConfigSession:
 			"term_size": Config.instance.term_size,
 			"packs": Config.instance.packs,
 			"custom": Config.instance.custom,
+			"colors": Config.instance.colors,
 		}, open(Config.path, "w", encoding="utf-8"), indent=4)
 
 
