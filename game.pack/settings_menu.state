@@ -1,0 +1,80 @@
+"""
+
+"""
+
+import curses
+
+from kernel import State, ColorSys, Config
+
+
+class SettingsMenu(State):
+
+
+	def init(self):
+
+		self.resume()
+
+	def cleanup(self):
+		pass
+
+	def handle_events(self):
+
+		try:
+
+			char = self.window.getkey()
+
+		except curses.error:  # no key pressed
+			return
+
+		if char == "z":
+			self.state_manager.pop_state()
+
+	def update(self, dt):
+		pass
+
+	def draw(self):
+
+		self.window.clear()
+
+		my, mx = self.window.getmaxyx()
+
+		txt = f"""
+[A] Colors: {Config.instance.colors}
+[B] Change terminal size ({Config.instance.term_size})
+[Z] Go back to main menu
+		""".strip()
+
+		txt_split = txt.split("\n")
+		line_amount = len(txt_split)
+		i = 0
+
+		for line in txt_split:
+			self.window.addstr(my//2 - line_amount//2 + i, mx//2 - len(line)//2, line)
+			i += 1
+
+		self.window.refresh()
+
+	def pause(self):
+		pass
+
+	def resume(self):
+
+		curses.curs_set(False)
+		self.window.nodelay(True)
+
+		self.window.bkgd(" ", self.state_manager.color_sys.get_color(
+			ColorSys.WHITE,
+			ColorSys.BLACK,
+		))
+
+		self.window.attrset(self.state_manager.color_sys.get_color(
+			ColorSys.WHITE,
+			ColorSys.BLACK,
+		))
+
+		my, mx = self.window.getmaxyx()
+
+		self.window.refresh()
+
+	def endframe(self):
+		pass
